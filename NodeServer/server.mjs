@@ -25,3 +25,30 @@ app.get("/pokemon", (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })
+
+/* CHAT GPT 
+
+app.get("/pokemon", (req, res) => {
+    axios.get(initialUrl)
+    .then(response => {
+        const pokemonUrls = response.data.results.map(pokemon => pokemon.url);
+        const pokemonPromises = pokemonUrls.map(url => axios.get(url));
+
+        Promise.all(pokemonPromises)
+          .then(pokemonResponses => {
+              const pokemonData = pokemonResponses.map(response => response.data);
+              res.json(pokemonData);
+          })
+          .catch(error => {
+              console.error("Error fetching Pokemon data:", error);
+              res.status(500).json({ error: 'Internal Server Error' });
+          });
+    })
+    .catch(error => {
+        console.error("Error fetching Pokemon list:", error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    });
+});
+
+
+*/

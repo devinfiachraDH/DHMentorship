@@ -28,6 +28,12 @@ app.listen(port, () => {
 
 /* CHAT GPT 
 
+need info from 
+"id", "name"
+"sprites": {
+  "front_default" : : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/151.svg"
+}
+
 app.get("/pokemon", (req, res) => {
     axios.get(initialUrl)
     .then(response => {

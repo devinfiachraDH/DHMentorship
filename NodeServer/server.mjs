@@ -13,7 +13,9 @@ app.get("/", (req, res) => {
 app.get("/pokemon", (req, res) => {
     axios.get(url)
     .then(data => {
-      res.json(data.data.results);
+        const pokemonUrls = data.data.results.map(pokemon => {
+            console.log(pokemon.url);
+        });
     })
     .catch(error => {
       res.status(500).json({ error: 'Internal Server Error' });

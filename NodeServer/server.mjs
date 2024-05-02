@@ -13,8 +13,10 @@ nunjucks.configure('views', {
 
 const url = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 
+app.set('view engine', 'html')
+
 app.get("/", (req, res) => {
-    res.send("The beginning of my server project!")
+  res.render('home.html')
 })
 
 app.get("/pokemon", async (req, res) => {

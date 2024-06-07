@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% set title = 'Pokemon' %}
+{% block content %}
+    {% for pokemon in pokemonData %}
+  <div class="poke-card">
+    
+    <h1>{{pokemon.name}}</h1>
+    <p>#{{pokemon.id}}</p>
+    <img src={{pokemon.sprite}} class="pokeimg" alt={{pokemon.name}} >
+  </div>
+    {% endfor %}
+{% endblock %}

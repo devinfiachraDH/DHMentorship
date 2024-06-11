@@ -1,0 +1,30 @@
+<body>
+    <div class="header">
+        <h1>${portal.name}</h1>
+        <div class="logo">
+            <img src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5aa964c51b0e4d3d9521ebb1/original.png?1521050821" alt="Delivery Hero Logo">
+        </div>
+    </div>
+    
+<div class="section">
+        <div><b>&#128204; Issue: </b> <strong>${issue.key}</strong> - ${issue.summary}</div>
+        <div><b>&#128587; Reporter: </b>${issue.reporter.name}</div>
+        <div><b>&#129464; Assignee: </b>${recipient.name}</div>
+        <div><b>&#128239; Current Status: </b>${request.status}</div>
+        <div><b>&#128231; Shared With: </b> ${request.sharedwith}</div>
+ </div>           
+        
+<div class="section-main"> 
+        ${message.content}
+</div>
+
+<div class="cta-section">
+    <a class="button" href="${request.url}">CLICK HERE TO VIEW OR UPDATE THIS ISSUE &#128209;</a>
+    <a class="button" href="https://jira.deliveryhero.com/plugins/servlet/desk/user/requests?status=open&reporter=me">VIEW YOUR OTHER SERVICE REQUESTS HERE &#128194;</a>
+</div>
+ 
+    <div class="footer">
+        © 2024 ${portal.name}
+        <a class="unsubscribe" href="${request.disable.notifications.url}">Click here to stop receiving updates about this issue</a>
+</div>
+</body>

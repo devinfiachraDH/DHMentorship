@@ -3624,19 +3624,19 @@ pages:
                 is_required: true
                 label: select_cancel_reason - { { fill out with the correct text or add Weblate translation key of your choice } }
                 choices:
-                  - value: VOUCHER_NOT_APPLIED
+                  - value: PRE_ACCEPTANCE_VOUCHER_NOT_APPLIED
                     text: {{reason_for_cancelling_my_voucher_wasnt_applied}}
-                  - value: CHANGED_MIND_MISTAKE_ERROR
+                  - value: PRE_ACCEPTANCE_CHANGED_MIND_MISTAKE_ERROR
                     text: {{reason_for_cancelling_change_payment_method}}
-                  - value: CHANGED_MIND_MISTAKE_ERROR
+                  - value: PRE_ACCEPTANCE_CHANGED_MIND_MISTAKE_ERROR
                     text: {{reason_for_cancelling_forgot_to_add_something}}
-                  - value: CHANGED_MIND_MISTAKE_ERROR
+                  - value: PRE_ACCEPTANCE_CHANGED_MIND_MISTAKE_ERROR
                     text: {{reason_for_cancelling_wrong_address}}
                   - value: LATE_DELIVERY
                     text: {{reason_for_cancelling_waiting_time_is_too_long}}
-                  - value: DUPLICATE_ORDER
+                  - value: PRE_ACCEPTANCE_DUPLICATE_ORDER
                     text: {{reason_for_cancelling_placed_order_by_accident}}
-                  - value: CHANGED_MIND_NO_REASON
+                  - value: PRE_ACCEPTANCE_CHANGED_MIND_NO_REASON
                     text: {{reason_for_cancelling_changed_my_mind}}
 
              # With formV2, you have to define "request & decision" process.
@@ -3658,8 +3658,6 @@ pages:
                     # The namespace "autoCancellationNamespace", which was defined above, has a built-in-drawer(let's say) called "fieldValues",
                     # which stores data based on user behavior, such as the selected choices of reason.
                     platform_code: << $autoCancellationNamespace.fieldValues.autoCancellationReasonCode >>
-                    # This field is Pedidosya specific.
-                    user_token: xxyyzz
                 # After request is complete, it will move on to the decision process.
                 # You have to define the name for the decision id, like you did above for the request id.
                 next_step_id: autoCancellationDecision

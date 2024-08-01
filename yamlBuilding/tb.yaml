@@ -3596,7 +3596,7 @@ pages:
   
 # ========= FORMV2 BLOCK WITH REQUEST-->DECISION-->NAVIGATION ON SUBMIT ==========
   - id: page.autoCancellation
-    title: {{ request_cancel_order }} #weblate - {  { autocancel_title } } Cancel Order
+    title: {{ request_cancel_order }} 
     blocks:
       - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
         type: blockGroup
@@ -3605,7 +3605,7 @@ pages:
         blocks:
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|text
             type: richContent
-            text:  {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }} # - { { fill out with the correct text or add Weblate translation key of your choice } }
+            text:  {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }}
  
           # This is where you define autoCancellation with formV2.
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|formv2
@@ -3613,16 +3613,16 @@ pages:
             # "namespace" is important. You can give any name to it as long as you use it below with the same naming.
             # Think of it as a storage where all the data are collected based on the conditions of the order and user behavior.
             namespace: autoCancellationNamespace
-            submit_button_text: {{ Cancel_Order }} # - { { fill out with the correct text or add Weblate translation key of your choice } }
+            submit_button_text: {{ Cancel_Order }}
             constants:
-              subject: Cancel order #cancel_not_accepted_order - { { fill out with the correct text or add Weblate translation key of your choice } }
+              subject: {{Cancel_Order}}
             fields:
               - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|formv2|reason
                 type: singleSelect
                 # Like "namespace", "data_key" can also be given any name. This is the metadata linked to this "singleSelect" block.
                 data_key: autoCancellationReasonCode
                 is_required: true
-                label: select_cancel_reason - { { fill out with the correct text or add Weblate translation key of your choice } }
+                label: {{label_cancelReasons_choices}}
                 choices:
                   - value: PRE_ACCEPTANCE_VOUCHER_NOT_APPLIED
                     text: {{reason_for_cancelling_my_voucher_wasnt_applied}}
@@ -3632,8 +3632,6 @@ pages:
                     text: {{reason_for_cancelling_forgot_to_add_something}}
                   - value: PRE_ACCEPTANCE_CHANGED_MIND_MISTAKE_ERROR
                     text: {{reason_for_cancelling_wrong_address}}
-                  - value: LATE_DELIVERY
-                    text: {{reason_for_cancelling_waiting_time_is_too_long}}
                   - value: PRE_ACCEPTANCE_DUPLICATE_ORDER
                     text: {{reason_for_cancelling_placed_order_by_accident}}
                   - value: PRE_ACCEPTANCE_CHANGED_MIND_NO_REASON
@@ -3694,62 +3692,62 @@ pages:
               # All the rest of the steps are resolved according to conditions and referenced by next_step_id.
               - id: navigateToOrderCancelledPage
                 type: navigation
-                destination: page.navigateToOrderCancelledPage_matthieuTest
+                destination: page.navigateToOrderCancelledPagePreVa
  
               - id: navigateToCaseCreatedPage
                 type: navigation
-                destination: page.navigateToCaseCreatedPage_matthieuTest
+                destination: page.navigateToCaseCreatedPage
  
               - id: navigateToNoFallbackPage
                 type: navigation
-                destination: page.navigateToNoFallbackPage_matthieuTest
+                destination: page.navigateToNoFallbackPage
  
               - id: navigateToChatPage
                 type: navigation
-                destination: page.navigateToChatPage_matthieuTest
+                destination: page.navigateToChatPage
  
 # ========= RESULT PAGES =========
   # In this example code snippet, 'result' block is being used, but it can actually be any block type.
-  - id: page.navigateToOrderCancelledPage_matthieuTest
-    title: matthieu_test
+  - id: page.navigateToOrderCancelledPagePreVa
+    title: {{autocancel_success_title}}
     blocks:
       - id: autoCancellationResult|success
         type: result
         result_type: SUCCESS
-        title: order_cancelled # title - { { fill out with the correct text or add Weblate translation key of your choice } }
-        description: order_cancelled description - { { fill out with the correct text or add Weblate translation key of your choice } }
+        title: {{order_canceled_success}} 
+        description: {{order_canceled_content}}
  
-  - id: page.navigateToCaseCreatedPage_matthieuTest
-    title: matthieu_test
+  - id: page.navigateToCaseCreatedPage
+    title: {{autocancel_case_created_title}}
     blocks:
       - id: autoCancellationResult|caseCreated
         type: result
         result_type: ERROR
-        title: case_created # title  - { { fill out with the correct text or add Weblate translation key of your choice } }
-        description: case_created description - { { fill out with the correct text or add Weblate translation key of your choice } }
+        title: {{autocancel_case_created}}
+        description: {{autocancel_case_created_content}}
  
-  - id: page.navigateToNoFallbackPage_matthieuTest
-    title: matthieu_test
+  - id: page.navigateToNoFallbackPage
+    title: {{autocancel_no_fallback_title}}
     blocks:
       - id: autoCancellationResult|noFallback
         type: result
         result_type: ERROR
-        title: NO_FALLBACK # title - { { fill out with the correct text or add Weblate translation key of your choice } }
-        description: NO_FALLBACK description - { { fill out with the correct text or add Weblate translation key of your choice } }
+        title: {{autocancel_no_fallback}}
+        description: {{autocancel_case_created_content}}
  
-  - id: page.navigateToChatPage_matthieuTest
-    title: matthieu_test
+  - id: page.navigateToChatPage
+    title: {{autocancel_result_error_title}}
     blocks:
       - id: autoCancellationResult|text
         type: result
         result_type: ERROR
-        title: order_cancellation_error_message # title - { { fill out with the correct text or add Weblate translation key of your choice } }
-        description: order_cancellation_error_message description - { { fill out with the correct text or add Weblate translation key of your choice } }
+        title: {{autocancel_result_error}}
+        description: {{autocancel_result_error_content}}
       - id: autoCancellationResult|chat
         type: form
-        submit_text: start_chat - { { fill out with the correct text or add Weblate translation key of your choice } }
+        submit_text: {{ Chat }}
         constants:
-          reason_code: 1B.1 #- { { place the correct reason_code } }
+          reason_code: 1C.1
           order_id: <<order.orderId>>
-          subject: could_not_update_delivery_address and then auto_cancellation_failed - { { fill out with the correct text or add Weblate translation key of your choice } }
+          subject: {{ autocancel_chat_text }}
         action: chat

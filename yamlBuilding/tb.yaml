@@ -626,7 +626,7 @@ pages:
             type: link
             meta:
                 # These are the conditions necessary for pre-acceptance.
-              conditions: order.status IN [PENDING, TRANSMITTED, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED, SENT_TO_LOGISTICS, SENDING_TO_VENDOR, DISPLAYED_AT_VENDOR]
+              conditions: order.status IN [PENDING, TRANSMITTED, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED, SENT_TO_LOGISTICS, SENDING_TO_VENDOR, DISPLAYED_AT_VENDOR] AND order.delivery_type IN [platform_delivery]
             destination: page.autoCancellation
       - id: myOrdersList|OD|ACCEPTED
         type: selectedOrderDetail
@@ -3671,19 +3671,8 @@ pages:
                       $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
                     next_step_id: navigateToOrderCancelledPage
  
-                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = UNEXPECTED AND
-                      $autoCancellationNamespace.steps.autoCancellationRequest.response.body.fallback.type = CASE
-                    next_step_id: navigateToCaseCreatedPage
- 
-                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = UNEXPECTED AND
-                      $autoCancellationNamespace.steps.autoCancellationRequest.response.body.fallback.type = NO_FALLBACK
-                    next_step_id: navigateToNoFallbackPage
- 
-                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type IN [INVALID_CANCEL_REASON, CANCELLATION_ERROR]
-                    next_step_id: navigateToNoFallbackPage
- 
                   # This (the last) is the default result page when none of the conditions above were met
-                  - next_step_id: navigateToChatPage
+                  - next_step_id: navigateToNoFallbackPage
  
               # These "navigation" blocks correspond to the conditions you defined in the decision branches.
               # Of course, the destination pages should be defined according to the business/product needs,
@@ -3694,18 +3683,10 @@ pages:
                 type: navigation
                 destination: page.navigateToOrderCancelledPagePreVa
  
-              - id: navigateToCaseCreatedPage
-                type: navigation
-                destination: page.navigateToCaseCreatedPage
- 
               - id: navigateToNoFallbackPage
                 type: navigation
-                destination: page.navigateToNoFallbackPage
- 
-              - id: navigateToChatPage
-                type: navigation
-                destination: page.navigateToChatPage
- 
+                destination: page.navigateToNoFallbackPage 
+
 # ========= RESULT PAGES =========
   # In this example code snippet, 'result' block is being used, but it can actually be any block type.
   - id: page.navigateToOrderCancelledPagePreVa
@@ -3716,16 +3697,7 @@ pages:
         result_type: SUCCESS
         title: {{order_canceled_success}} 
         description: {{order_canceled_content}}
- 
-  - id: page.navigateToCaseCreatedPage
-    title: {{autocancel_case_created_title}}
-    blocks:
-      - id: autoCancellationResult|caseCreated
-        type: result
-        result_type: ERROR
-        title: {{autocancel_case_created}}
-        description: {{autocancel_case_created_content}}
- 
+  
   - id: page.navigateToNoFallbackPage
     title: {{autocancel_no_fallback_title}}
     blocks:
@@ -3734,20 +3706,3 @@ pages:
         result_type: ERROR
         title: {{autocancel_no_fallback}}
         description: {{autocancel_case_created_content}}
- 
-  - id: page.navigateToChatPage
-    title: {{autocancel_result_error_title}}
-    blocks:
-      - id: autoCancellationResult|text
-        type: result
-        result_type: ERROR
-        title: {{autocancel_result_error}}
-        description: {{autocancel_result_error_content}}
-      - id: autoCancellationResult|chat
-        type: form
-        submit_text: {{ Chat }}
-        constants:
-          reason_code: 1C.1
-          order_id: <<order.orderId>>
-          subject: {{ autocancel_chat_text }}
-        action: chat

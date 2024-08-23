@@ -107,29 +107,63 @@ pages:
             text:  {{ button_wimo_secondary_new }}
             meta:
               conditions:
-                order.original_promised_time >= 20 AND
-                order.delivery_type IN [platform_delivery] AND
-                order.delivery_fee_option != PRIORITY
+                order.status IN [TRANSMITTED, DISPLAYED_AT_VENDOR] AND
+                order.original_promised_time < 10
             destination: mainMenu
-          - id: whereIsMyOrderDetail|helpButton|OD|prioDelivery
+          - id: whereIsMyOrderDetail|OD|transmitted|delay
             type: button
             variant: secondary
             text:  {{ button_wimo_secondary_new }}
             meta:
               conditions:
-                order.original_promised_time >= 0 AND
-                order.delivery_type IN [platform_delivery] AND
-                order.delivery_fee_option = PRIORITY
-            destination: mainMenu
-          - id: whereIsMyOrderDetail|helpButton|otherDelivery
+                    order.status IN [TRANSMITTED, DISPLAYED_AT_VENDOR] AND
+                    order.original_promised_time >= 10 AND
+                    order.vertical_type NOT IN [charity]
+            destination: complain_about_late_order.3A
+          - id: whereIsMyOrderDetail|OD|reactivecomp|shortdelay
             type: button
             variant: secondary
             text:  {{ button_wimo_secondary_new }}
             meta:
               conditions:
-                order.original_promised_time >= 20 AND
-                order.delivery_type NOT IN [platform_delivery]
-            destination: mainMenu
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time BETWEEN 20:35 AND
+                    order.vertical_type NOT IN [charity]
+            destination: complain_about_late_order.4
+          - id: whereIsMyOrderDetail|OD|reactivecomp|moderatedelay
+            type: button
+            variant: secondary
+            text:  {{ button_wimo_secondary_new }}
+            meta:
+              conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time BETWEEN 35:50 AND
+                    order.vertical_type NOT IN [charity]
+            destination: complain_about_late_order.5
+          - id: whereIsMyOrderDetail|OD|reactivecomp|severedelay
+            type: button
+            variant: secondary
+            text:  {{ button_wimo_secondary_new }}
+            meta:
+              conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time BETWEEN 50:65 AND
+                    order.vertical_type NOT IN [charity]
+            destination: complain_about_late_order.6
+          - id: whereIsMyOrderDetail|OD|reactivecomp|extremedelay
+            type: button
+            variant: secondary
+            text:  {{ button_wimo_secondary_new }}
+            meta:
+              conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time >= 65 AND
+                    order.vertical_type NOT IN [charity]
+            destination: complain_about_late_order.7
   - id: page.2
     title: {{ making_a_payment }}
     blocks:

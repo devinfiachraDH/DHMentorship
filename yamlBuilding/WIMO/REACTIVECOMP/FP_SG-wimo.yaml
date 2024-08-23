@@ -257,7 +257,7 @@ pages:
             type: richContent
             text: {{ banner_push_noti_info }}
           - id: whereIsMyOrderDetail|waitButton
-            type: deepLink
+            type: 
             variant: primary
             deeplink_url: foodpanda://?c=<<sg>>&s=t&id=<<order_id>>
             deeplink_title: otp_deeplink

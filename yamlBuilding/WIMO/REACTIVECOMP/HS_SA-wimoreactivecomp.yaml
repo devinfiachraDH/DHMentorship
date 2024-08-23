@@ -90,24 +90,21 @@ pages:
         variant: CUSTOMER
         destination: orderDetail
   - id: whereIsMyOrder
-    title:  where_is_my_order }}
+    title:  {{ where_is_my_order }}
     blocks:
       - id: whereIsMyOrder|whereIsMyOrderDetail
         type: whereIsMyOrderDetail
         blocks:
-          - id: whereIsMyOrderDetail|banner
-            type: richContent
-            text:  banner_push_noti_info }}
           - id: whereIsMyOrderDetail|waitButton
             type: deepLink
             variant: primary
-            deeplink_url: foodpanda://?c=<<sg>>&s=t&id=<<order_id>>
+            deeplink_url: hungerstation://?c=SA&s=o&id=<<order_id>>
             deeplink_title: otp_deeplink
-            submit_text:  button_back_to_order }}
+            submit_text:  {{ button_back_to_order }}
           - id: whereIsMyOrderDetail|helpButton|OD
             type: button
             variant: secondary
-            text:  button_wimo_secondary }}
+            text:  {{ button_wimo_secondary }}
             meta:
               conditions:
                 order.original_promised_time >= 20 AND
@@ -117,7 +114,7 @@ pages:
           - id: whereIsMyOrderDetail|helpButton|OD|prioDelivery
             type: button
             variant: secondary
-            text:  button_wimo_secondary }}
+            text:  {{ button_wimo_secondary }}
             meta:
               conditions:
                 order.original_promised_time >= 0 AND
@@ -127,7 +124,7 @@ pages:
           - id: whereIsMyOrderDetail|helpButton|otherDelivery
             type: button
             variant: secondary
-            text:  button_wimo_secondary }}
+            text:  {{ button_wimo_secondary }}
             meta:
               conditions:
                 order.original_promised_time >= 20 AND

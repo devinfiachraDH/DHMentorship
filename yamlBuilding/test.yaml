@@ -1,0 +1,59 @@
+#CHAT
+              - id: orders|ordersList|orderDetail|OD|whereIsOrder|transmitted|delay
+                meta:
+                  conditions:
+                    order.status IN [TRANSMITTED, DISPLAYED_AT_VENDOR] AND
+                    order.original_promised_time >= 10 AND
+                    order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
+                text: {{ where_is_myorder }}
+                type: link
+                destination: complain_about_late_order.3A
+#Reactive Comp
+              - id: orders|ordersList|orderDetail|OD|whereIsOrder|reactivecomp|shortdelay
+                meta:
+                  conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time BETWEEN 20:35 AND
+                    order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
+                text: {{ where_is_myorder }}
+                type: link
+                destination: complain_about_late_order.4
+#Reactive Comp
+              - id: orders|ordersList|orderDetail|OD|whereIsOrder|reactivecomp|moderatedelay
+                meta:
+                  conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time BETWEEN 35:50 AND
+                    order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
+                text: {{ where_is_myorder }}
+                type: link
+                destination: complain_about_late_order.5
+#Reactive Comp
+              - id: orders|ordersList|orderDetail|OD|whereIsOrder|reactivecomp|severedelay
+                meta:
+                  conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time BETWEEN 50:65 AND
+                    order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
+                text: {{ where_is_myorder }}
+                type: link
+                destination: complain_about_late_order.6
+#Reactive Comp
+              - id: orders|ordersList|orderDetail|OD|whereIsOrder|reactivecomp|extremedelay
+                meta:
+                  conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time >= 65 AND
+                    order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
+                text: {{ where_is_myorder }}
+                type: link
+                destination: complain_about_late_order.7

@@ -481,6 +481,7 @@ pages:
                     SENT_TO_LOGISTICS, SENDING_TO_VENDOR, WAITING_FOR_VALIDATION] AND
                     order.creation_time BETWEEN 0:10 AND
                     order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.1
@@ -490,6 +491,7 @@ pages:
                     order.status IN [TRANSMITTED, DISPLAYED_AT_VENDOR] AND
                     order.original_promised_time < 10 AND
                     order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.1A
@@ -500,6 +502,7 @@ pages:
                     COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
                     order.original_promised_time < 20 AND
                     order.vertical_type = restaurants
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.1B
@@ -510,6 +513,7 @@ pages:
                     COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
                     order.original_promised_time < 20 AND
                     order.vertical_type NOT IN [restaurants, charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.1C
@@ -520,6 +524,7 @@ pages:
                     SENT_TO_LOGISTICS, SENDING_TO_VENDOR, WAITING_FOR_VALIDATION] AND
                     order.creation_time >= 10 AND
                     order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.3
@@ -529,6 +534,7 @@ pages:
                     order.status IN [TRANSMITTED, DISPLAYED_AT_VENDOR] AND
                     order.original_promised_time >= 10 AND
                     order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.3A
@@ -539,6 +545,7 @@ pages:
                     COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
                     order.original_promised_time BETWEEN 20:35 AND
                     order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.4
@@ -549,6 +556,7 @@ pages:
                     COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
                     order.original_promised_time BETWEEN 35:50 AND
                     order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.5
@@ -559,6 +567,7 @@ pages:
                     COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
                     order.original_promised_time BETWEEN 50:65 AND
                     order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.6
@@ -569,6 +578,7 @@ pages:
                     COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
                     order.original_promised_time >= 65 AND
                     order.vertical_type NOT IN [charity]
+                    AND order.delivery_type != platform_delivery
                 text: {{ where_is_myorder }}
                 type: link
                 destination: complain_about_late_order.7

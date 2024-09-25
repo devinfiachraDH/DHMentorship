@@ -359,6 +359,20 @@ pages:
                   - id: orders|ordersList|orderDetail|OD|infos|accepted|HPlus|text
                     type: richContent
                     text: {{ restaurant_preparing_your_meal_compact }}
+              - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA
+                type: blockGroup
+                meta:
+                  conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED] AND
+                    order.original_promised_time < 20 AND
+                    customer.subscription.status = False AND
+                    order.payment_type = OP AND
+                    order.vertical_type = restaurants
+                blocks:
+                  - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA|refundTrue
+                    type: link
+                    text: {{ want_to_cancel_my_order }}
+                    destination: cancellation.cancel_accepted_order_refund_true
               - id: orders|ordersList|orderDetail|OD|infos|acceptedDelayed
                 type: blockGroup
                 meta:
@@ -8877,114 +8891,37 @@ pages:
               - id: navigateToChatPage
                 type: navigation
                 destination: page.navigateToChatPage
- 
-# AUTOCANCEL POSTVA - cancel accepted order post vendor refund false
-  - id: cancellation.cancel_accepted_order_refund_false
-    title: Test want to cancel
+
+  - id: page.navigateToNoFallbackPage
+    title: {{ no_fallback_title_cancellation}}
     blocks:
-      - id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted|1
-        type: blockGroup
-        event_id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted
-        deflection_id: 1C
-        blocks:
-          - id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted|text
-            type: richContent
-            text: {{ choose_a_reason_to_cancel }}
-          - id: autoCancellation|selectReason|form
-            type: formV2
-            namespace: autocancellationSelectionReason
-            submit_button_text: {{ button_next }}
-            fields:
-              - id: autoCancellation|selectReason|choiceGroup
-                type: choiceGroup
-                data_key: autoCancellationReasonCode
-                label: {{ label_radio_guest }}
-                is_required: true
-                blocks:
-                  - id: autoCancellation|selectReason|radio|1
-                    type: radio
-                    value: CUSTOMER_WAIT_LONGER_THAN_EXPECTED
-                    text: {{ my_order_will_take_longer_than_expected }}
-                  - id: autoCancellation|selectReason|radio|2
-                    type: radio
-                    value: CUSTOMER_ACCIDENTAL_ORDER
-                    text: {{ i_accidentally_placed_an_order }}
-                  - id: autoCancellation|selectReason|radio|3
-                    type: radio
-                    value: CUSTOMER_VOUCHER_NOT_APPLIED
-                    text: {{ my_voucher_was_not_applied }}
-                  - id: autoCancellation|selectReason|radio|4
-                    type: radio
-                    value: CUSTOMER_CHANGED_MIND
-                    text: {{ i_changed_my_mind }}
-                  - id: autoCancellation|selectReason|radio|5
-                    type: radio
-                    value: CUSTOMER_DUPLICATE_ORDER
-                    text: {{ this_is_a_duplicate_order }}
-                  - id: autoCancellation|selectReason|radio|6
-                    type: radio
-                    value: CUSTOMER_DOES_NOT_WANT_TO_WAIT
-                    text: {{ i_do_not_want_to_wait }}
-                  - id: autoCancellation|selectReason|radio|7
-                    type: radio
-                    value: CUSTOMER_REFUSED_TO_PAY
-                    text: {{ i_do_not_want_to_pay }}
-                  - id: autoCancellation|selectReason|radio|8
-                    type: radio
-                    value: CUSTOMER_CHANGED_MIND_CONTACT_AFTER_5_MIN
-                    text: {{ i_changed_my_mind_contact_after_5_min }}
-            on_submit:
-              - id: autoCancellationRequest
-                type: request
-                action:
-                  type: autoCancellation
-                  params:
-                    is_refundable: false
-                    order_id: << order.orderId >>
-                    platform_code: << $autocancellationSelectionReason.fieldValues.autoCancellationReasonCode >>
-                next_step_id: autoCancellationDecision
-              - id: autoCancellationDecision
-                type: decision
-                # In the decision process, you can dictate which result page the user will land
-                # based on the conditions you define.
-                branches:
-                  # Like "fieldValues", The namespace "autocancellationSelectionReason" has another built-in-drawer(let's say) called "steps",
-                  # which collects the response data of the request made just few milliseconds ago based on the request id.
-                  - conditions: $autocancellationSelectionReason.steps.autoCancellationRequest.response.status = 200 AND
-                      $autocancellationSelectionReason.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
-                    next_step_id: navigateToOrderCancelledPage
-                              
-                  - conditions: $autocancellationSelectionReason.steps.autoCancellationRequest.response.body.type = UNEXPECTED AND
-                      $autocancellationSelectionReason.steps.autoCancellationRequest.response.body.fallback.type = CASE
-                    next_step_id: navigateToCaseCreatedPage
-                              
-                  - conditions: $autocancellationSelectionReason.steps.autoCancellationRequest.response.body.type = UNEXPECTED AND
-                      $autocancellationSelectionReason.steps.autoCancellationRequest.response.body.fallback.type = NO_FALLBACK
-                    next_step_id: navigateToNoFallbackPage
-                              
-                  - conditions: $autocancellationSelectionReason.steps.autoCancellationRequest.response.body.type IN [INVALID_CANCEL_REASON, CANCELLATION_ERROR]
-                    next_step_id: navigateToNoFallbackPage
-                              
-                  # This (the last) is the default result page when none of the conditions above were met
-                  - next_step_id: navigateToChatPage
-                              
-                            # These "navigation" blocks correspond to the conditions you defined in the decision branches.
-                            # Of course, the destination pages should be defined according to the business/product needs,
-                            # which is not covered here.
-                            # It's important that the first navigation block matches the first branch in decision.
-                            # All the rest of the steps are resolved according to conditions and referenced by next_step_id.
-              - id: navigateToOrderCancelledPage
-                type: navigation
-                destination: page.navigateToOrderCancelledPage
-                              
-              - id: navigateToCaseCreatedPage
-                type: navigation
-                destination: page.navigateToCaseCreatedPage
-                              
-              - id: navigateToNoFallbackPage
-                type: navigation
-                destination: page.navigateToNoFallbackPage
-                              
-              - id: navigateToChatPage
-                type: navigation
-                destination: page.navigateToChatPage
+      - id: cancellation|result|error
+        type: result
+        result_type: ERROR
+        title: {{ no_fallback_title_cancellation }}
+        description: {{ no_fallback_desc_cancellation }}
+      - id: reactiveCompensation|result|navigateToCaseInbox
+        type: formV2
+        namespace: navigateToMainMenu
+        submit_button_text: {{ go_to_main_menu }}
+        on_submit:
+          - id: navigateToMainMenu
+            type: navigation
+            destination: mainMenu
+
+  - id: page.navigateToOrderCancelledPage
+    title: {{ order_cancelled_title }}
+    blocks:
+      - id: cancellation|result|error
+        type: result
+        result_type: SUCCESS
+        title: {{ order_cancelled_title }}
+        description: {{ order_cancelled_description }}
+      - id: reactiveCompensation|result|navigateToCaseInbox
+        type: formV2
+        namespace: navigateToMainMenu
+        submit_button_text: {{ go_to_main_menu }}
+        on_submit:
+          - id: navigateToMainMenu
+            type: navigation
+            destination: mainMenu

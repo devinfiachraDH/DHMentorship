@@ -8810,15 +8810,15 @@ pages:
                 label: {{ label_radio_guest }}
                 is_required: true
                 blocks:
-                  - id: autoCancellation|selectReason|radio|1
+                  - id: autoCancellation|selectReason|radio|ssfOrderDelayed
                     type: radio
                     value: ssf_order_delayed
                     text: {{ ssf_order_delayed }}
-                  - id: autoCancellation|selectReason|radio|2
+                  - id: autoCancellation|selectReason|radio|ssfWrongOffer
                     type: radio
                     value: ssf_wrong_offer
                     text: {{ ssf_wrong_offer }}
-                  - id: autoCancellation|selectReason|radio|3
+                  - id: autoCancellation|selectReason|radio|ssfOrderModifications
                     type: radio
                     value: ssf_order_modifications
                     text: {{ ssf_order_modifications }}

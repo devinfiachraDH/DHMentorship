@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% set title = 'Pokedex' %}
+{% block content %}
+<a href="/pokemon" alt="Back to Main Menu">
+  <div class="poke-card">
+    <h1>{{pokemon.name}}</h1>
+    <p>#{{pokemon.id}}</p>
+    <img src={{pokemon.sprite}} class="pokeimg" alt={{pokemon.name}} >
+  </div>
+</a>
+{% endblock %}

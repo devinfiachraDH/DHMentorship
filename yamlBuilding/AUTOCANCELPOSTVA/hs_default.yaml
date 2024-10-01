@@ -602,20 +602,6 @@ pages:
                     order.delivery_type = platform_delivery AND
                     order.vertical_type NOT IN [charity]
                 destination: change_delivery_instructions.1
-              - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA
-                type: blockGroup
-                meta:
-                  conditions:
-                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED] AND
-                    order.original_promised_time > 60 AND
-                    customer.subscription.status = False AND
-                    order.payment_type = OP AND
-                    order.vertical_type = restaurants
-                blocks:
-                  - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA|refundTrue
-                    type: link
-                    text: {{ want_to_cancel_my_order }}
-                    destination: cancellation.cancel_accepted_order_refund_true
               - id: orders|ordersList|orderDetail|OD|changeOrder
                 type: link
                 text: {{ customer_address_issues }}
@@ -635,6 +621,20 @@ pages:
                     order.creation_time BETWEEN 0:10 AND
                     order.vertical_type NOT IN [charity]
                 destination: voucher_cannot_apply.voucher_doesnt_work
+              - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA
+                type: blockGroup
+                meta:
+                  conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED] AND
+                    order.original_promised_time > 60 AND
+                    customer.subscription.status = False AND
+                    order.payment_type = OP AND
+                    order.vertical_type = restaurants
+                blocks:
+                  - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA|refundTrue
+                    type: link
+                    text: {{ want_to_cancel_my_order }}
+                    destination: cancellation.cancel_accepted_order_refund_true
               - id: orders|ordersList|orderDetail|OD|cancelMyOrder
                 text: {{ want_to_cancel_my_order }}
                 type: link

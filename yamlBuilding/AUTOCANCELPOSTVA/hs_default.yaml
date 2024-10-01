@@ -607,7 +607,7 @@ pages:
                 meta:
                   conditions:
                     order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED] AND
-                    order.original_promised_time < 20 AND
+                    order.original_promised_time > 60 AND
                     customer.subscription.status = False AND
                     order.payment_type = OP AND
                     order.vertical_type = restaurants

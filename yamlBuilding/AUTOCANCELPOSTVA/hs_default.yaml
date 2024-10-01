@@ -602,7 +602,7 @@ pages:
                     order.delivery_type = platform_delivery AND
                     order.vertical_type NOT IN [charity]
                 destination: change_delivery_instructions.1
-                            - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA
+              - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA
                 type: blockGroup
                 meta:
                   conditions:

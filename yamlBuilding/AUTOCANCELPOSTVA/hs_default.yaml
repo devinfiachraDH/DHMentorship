@@ -359,20 +359,6 @@ pages:
                   - id: orders|ordersList|orderDetail|OD|infos|accepted|HPlus|text
                     type: richContent
                     text: {{ restaurant_preparing_your_meal_compact }}
-              - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA
-                type: blockGroup
-                meta:
-                  conditions:
-                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED] AND
-                    order.original_promised_time < 20 AND
-                    customer.subscription.status = False AND
-                    order.payment_type = OP AND
-                    order.vertical_type = restaurants
-                blocks:
-                  - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA|refundTrue
-                    type: link
-                    text: {{ want_to_cancel_my_order }}
-                    destination: cancellation.cancel_accepted_order_refund_true
               - id: orders|ordersList|orderDetail|OD|infos|acceptedDelayed
                 type: blockGroup
                 meta:
@@ -616,6 +602,20 @@ pages:
                     order.delivery_type = platform_delivery AND
                     order.vertical_type NOT IN [charity]
                 destination: change_delivery_instructions.1
+                            - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA
+                type: blockGroup
+                meta:
+                  conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED] AND
+                    order.original_promised_time < 20 AND
+                    customer.subscription.status = False AND
+                    order.payment_type = OP AND
+                    order.vertical_type = restaurants
+                blocks:
+                  - id: orders|ordersList|orderDetail|OD|infos|accepted|cancellation|postVA|refundTrue
+                    type: link
+                    text: {{ want_to_cancel_my_order }}
+                    destination: cancellation.cancel_accepted_order_refund_true
               - id: orders|ordersList|orderDetail|OD|changeOrder
                 type: link
                 text: {{ customer_address_issues }}
@@ -672,7 +672,7 @@ pages:
               - id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted
                 event_id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted
                 deflection_id: 1C
-                text: {{ want_to_cancel_my_order }}
+                text:  {{ want_to_cancel_my_order }}
                 type: accordion
                 meta:
                   conditions:
@@ -8828,10 +8828,6 @@ pages:
                     type: radio
                     value: ssf_order_delayed
                     text: {{ ssf_order_delayed }}
-                  - id: autoCancellation|selectReason|radio|ssfWrongOffer
-                    type: radio
-                    value: ssf_wrong_offer
-                    text: {{ ssf_wrong_offer }}
                   - id: autoCancellation|selectReason|radio|ssfOrderModifications
                     type: radio
                     value: ssf_order_modifications
@@ -8900,14 +8896,13 @@ pages:
         result_type: ERROR
         title: {{ no_fallback_title_cancellation }}
         description: {{ no_fallback_desc_cancellation }}
-      - id: reactiveCompensation|result|navigateToCaseInbox
-        type: formV2
-        namespace: navigateToMainMenu
-        submit_button_text: {{ go_to_main_menu }}
-        on_submit:
-          - id: navigateToMainMenu
-            type: navigation
-            destination: mainMenu
+      - id: reactiveCompensation|result|navigateTochat
+        type: form
+        submit_text: {{ start_chat }}
+        action: chat
+        constants:
+          reason_code: 1C.1
+          subject: cancel_order
 
   - id: page.navigateToOrderCancelledPage
     title: {{ order_cancelled_title }}

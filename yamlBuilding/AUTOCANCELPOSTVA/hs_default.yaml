@@ -643,6 +643,7 @@ pages:
                     order.status IN [PICKED_UP, COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF]
                     AND
                     order.original_promised_time >= 20 AND
+                    order.original_promised_time <= 60 AND
                     order.vertical_type NOT IN [charity]
                 destination: cancellation.cancel_order_pickedup_late
               - id: orders|ordersList|orderDetail|OD|cancelMyOrder|pickedUpEarly
@@ -667,6 +668,7 @@ pages:
                   conditions:
                     order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED] AND
                     order.original_promised_time >= 20 AND
+                    order.original_promised_time <= 60 AND
                     order.vertical_type NOT IN [charity]
                 destination: cancellation.cancel_order_accepted_late
               - id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted

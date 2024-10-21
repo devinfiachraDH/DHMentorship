@@ -1,0 +1,50 @@
+- id: whereIsMyOrderDetail|OD|VendorDelayGroupPostPickUp|reactivecomp|extremedelay
+            type: button
+            variant: secondary
+            text:  {{ button_wimo_secondary_new }}
+            meta:
+              conditions:
+                   (order.status IN [PICKED_UP, COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND order.courier.delay_reason IN [vendor_late, saturated_fleet, change_in_staffing])
+                   or (order.status IN [COURIER_NEAR_DROP_OFF] AND order.courier.delay_reason IN [rider_late, overall_order_late])
+                    AND order.original_promised_time >= 65 AND
+                    order.vertical_type NOT IN [charity]
+            destination: complain_about_late_order.7
+
+
+            
+          - id: whereIsMyOrderDetail|OD|RiderDelayGroupAlmostThere|reactivecomp|extremedelay
+            type: button
+            variant: secondary
+            text:  {{ button_wimo_secondary_new }}
+            meta:
+              conditions:
+                    order.status IN [COURIER_NEAR_DROP_OFF]
+                    AND order.courier.delay_reason IN [rider_late, overall_order_late]
+                    AND order.original_promised_time >= 65 AND
+            destination: complain_about_late_order.7
+                    order.vertical_type NOT IN [charity]
+
+
+          - id: whereIsMyOrderDetail|OD|VendorDelayGroupPostPickUp|reactivecomp|extremedelay
+            type: button
+            variant: secondary
+            text:  {{ button_wimo_secondary_new }}
+            meta:
+              conditions:
+                    order.status IN [PICKED_UP, COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF]
+                    AND order.courier.delay_reason IN [vendor_late, saturated_fleet, change_in_staffing]
+                    AND order.original_promised_time >= 65 AND
+                    order.vertical_type NOT IN [charity]
+            destination: complain_about_late_order.7
+
+                    - id: whereIsMyOrderDetail|OD|reactivecomp|extremedelay
+            type: button
+            variant: secondary
+            text:  {{ button_wimo_secondary_new }}
+            meta:
+              conditions:
+                    order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED, PICKED_UP,
+                    COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF] AND
+                    order.original_promised_time >= 65 AND
+                    order.vertical_type NOT IN [charity]
+            destination: complain_about_late_order.7

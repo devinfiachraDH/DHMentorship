@@ -3682,7 +3682,7 @@ pages:
                 type: navigation
                 destination: cancellation.navigateToNoFallbackPage 
 
-# ========= RESULT PAGES =========
+# ========= RESULT PAGES ========
   - id: cancellation.navigateToOrderCancelledPagePreVa
     title: {{request_cancel_order}}
     blocks:

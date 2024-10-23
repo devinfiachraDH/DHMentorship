@@ -567,7 +567,7 @@ pages:
       - id: myOrdersList|ACCEPTED|IssueWithRestaurant|contentBlock
         type: blockGroup
         event_id: myOrdersList|ACCEPTED|IssueWithRestaurant
-        deflection_id: 2E.1
+        deflection_id: 1A.1
         blocks:
           - id: myOrdersList|ACCEPTED|IssueWithRestaurant|content
             type: richContent
@@ -577,7 +577,7 @@ pages:
             submit_text: {{ Chat }}
             action: chat
             constants:
-              reason_code: 2E.1
+              reason_code: 1A.1
   - id: check_order_status.202
     title: {{ tgo_issue_with_rider_link }}
     blocks:

@@ -36,6 +36,11 @@ pages:
             meta:
               conditions: is_guest_user = False
             destination: inbox
+          - id: tproSubscription
+            type: link
+            text: {{ tPro_Subscription }}
+            icon_url: https://images.deliveryhero.io/image/talabat/poh/GHC/Talabat_Pro_GHC_Icon.svg
+            destination: customer_account.1
           - id: tRewardsSubscription
             type: link
             text: {{ tRewards_Subscription_MenuLabel }}
@@ -80,6 +85,167 @@ pages:
           - id: placingOrder|content
             type: richContent
             text: {{ placingOrder_content }}
+  - id: customer_account.1
+    title: {{ tPro_Subscription }}
+    blocks:
+      - id: tproSubscription|blockGroup
+        type: blockGroup
+        event_id: tproSubscription
+        blocks:
+          - id: tproSubscription|WhatIsTalabatPro
+            type: link
+            text: {{ What_is_talabat_Pro }}
+            destination: subscription_premium_service_issue.1
+          - id: tproSubscription|HowDoISubscribeToTalabatPro
+            type: link
+            text: {{ How_do_I_subscribe_to_talabat_Pro }}
+            destination: subscription_premium_service_issue.2
+          - id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro
+            type: link
+            text: {{ How_do_I_identify_which_restaurants_are_part_of_talabat_Pro }}
+            destination: subscription_premium_service_issue.3
+          - id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro
+            type: link
+            text: {{ What_conditions_should_I_meet_to_benefit_from_talabat_Pro }}
+            destination: subscription_premium_service_issue.4
+          - id: tproSubscription|HowDoICancelMyTalabatProMembership
+            type: link
+            text: {{ How_do_I_cancel_my_talabat_Pro_membership }}
+            destination: subscription_premium_service_issue.7
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembership
+            type: link
+            text: {{ How_do_I_renew_my_talabat_Pro_membership }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = False AND customer.subscription.status = True
+            destination: subscription_premium_service_issue.5
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembershipExpired
+            type: link
+            text: {{ How_do_I_renew_my_talabat_Pro_membership }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = True AND customer.subscription.status = False
+            destination: subscription_premium_service_issue.5
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits
+            type: link
+            text: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = False AND customer.subscription.status = True
+            destination: subscription_premium_service_issue.6
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefitsExpired
+            type: link
+            text: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = True AND customer.subscription.status = False
+            destination: subscription_premium_service_issue.6
+          - id: tproSubscription|WhyHaveIBeenChargedAServiceFee
+            type: link
+            text: {{ tProWhyHaveIBeenChargedAServiceFee }}
+            destination: subscription_premium_service_issue.9
+  - id: subscription_premium_service_issue.1
+    title: {{ What_is_talabat_Pro }}
+    blocks:
+      - id: tproSubscription|WhatIsTalabatPro|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|WhatIsTalabatPro
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|WhatIsTalabatPro|content
+            type: richContent
+            text: {{ tproSubscription_WhatIsTalabatPro_content }}
+  - id: subscription_premium_service_issue.2
+    title: {{ How_do_I_subscribe_to_talabat_Pro }}
+    blocks:
+      - id: tproSubscription|HowDoISubscribeToTalabatPro|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|HowDoISubscribeToTalabatPro
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|HowDoISubscribeToTalabatPro|content
+            type: richContent
+            text: {{ tproSubscription_HowDoISubscribeToTalabatPro_content }}
+  - id: subscription_premium_service_issue.3
+    title: {{ How_do_I_identify_which_restaurants_are_part_of_talabat_Pro }}
+    blocks:
+      - id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro|content
+            type: richContent
+            text: {{ tproSubscription_HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro_content }}
+  - id: subscription_premium_service_issue.4
+    title: {{ What_conditions_should_I_meet_to_benefit_from_talabat_Pro }}
+    blocks:
+      - id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro|content
+            type: richContent
+            text: {{ tproSubscription_WhatConditionsShouldIMeetToBenefitFromTalabatPro_content }}
+  - id: subscription_premium_service_issue.5
+    title: {{ How_do_I_renew_my_talabat_Pro_membership }}
+    blocks:
+      - id: tproSubscription|HowDoIRenewMyTalabatProMembership|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|HowDoIRenewMyTalabatProMembership
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembership|content
+            type: richContent
+            text: {{ tproSubscription_HowDoIRenewMyTalabatProMembership_content }}
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembership|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 3D.8
+  - id: subscription_premium_service_issue.6
+    title: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+    blocks:
+      - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits|content
+            type: richContent
+            text: {{ tproSubscription_IAmFacingAnIssueWithMyTalabatProBenefits_content }}
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 3D.8
+  - id: subscription_premium_service_issue.7
+    title: {{ How_do_I_cancel_my_talabat_Pro_membership }}
+    blocks:
+      - id: tproSubscription|HowDoICancelMyTalabatProMembership|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|HowDoICancelMyTalabatProMembership
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|HowDoICancelMyTalabatProMembership|content
+            type: richContent
+            text: {{ tproSubscription_HowDoICancelMyTalabatProMembership_content }}
+          - id: tproSubscription|HowDoICancelMyTalabatProMembership|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 3D.8
+  - id: subscription_premium_service_issue.9
+    title: {{ tProWhyHaveIBeenChargedAServiceFee }}
+    blocks:
+      - id: tproSubscription|WhyHaveIBeenChargedAServiceFee|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|WhyHaveIBeenChargedAServiceFee
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|WhyHaveIBeenChargedAServiceFee|content
+            type: richContent
+            text: {{ tproSubscription_WhyHaveIBeenChargedAServiceFee_content }}
   - id: customer_account.2
     title: {{ tRewards_Subscription_MenuLabel }}
     blocks:

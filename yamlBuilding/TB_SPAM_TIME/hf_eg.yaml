@@ -887,12 +887,38 @@ pages:
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|content
             type: richContent
             text: {{ whereIsMyOrder_OD_ACCEPTED_exceededPromiseTime_Content }}
-          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|chat
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|shortdelay|chat
+            meta:
+              conditions: order.original_promised_time BETWEEN 0:10
             type: form
             submit_text: {{ Chat }}
             action: chat
             constants:
-              reason_code: 1A.2
+              reason_code: 1A.12
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|moderatedelay|chat
+            meta:
+              conditions: order.original_promised_time BETWEEN 10:20
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.13
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|severdelay|chat
+            meta:
+              conditions: order.original_promised_time BETWEEN 20:30
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.14
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|extremedelay|chat
+            meta:
+              conditions: order.original_promised_time > 30
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.15
       - id: myOrdersList|VD|ACCEPTED|whereIsMyOrder
         type: blockGroup
         event_id: myOrdersList|VD|ACCEPTED|whereIsMyOrder

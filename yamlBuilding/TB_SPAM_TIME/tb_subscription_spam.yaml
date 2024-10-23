@@ -741,7 +741,7 @@ pages:
             text: {{ my_order_never_arrived }}
             meta:
               conditions: order.delivery_type = platform_delivery AND order.delivered_time <= 240
-            destination: order_never_arrived.1
+            destination: order_marked_as_delivered_but_didnt_receive.1
           - id: myOrdersList|VD|Delivered|myOrderNeverArrived
             type: link
             text: {{ my_order_never_arrived }}
@@ -1442,7 +1442,7 @@ pages:
             text: {{ whereIsMyOrder_OD_ACCEPTED_exceededPromiseTime_Content }}
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|shortdelay|chat
             meta:
-              conditions: order.original_promised_time > 0 AND order.original_promised_time <= 10
+              conditions: order.original_promised_time BETWEEN 0:10
             type: form
             submit_text: {{ Chat }}
             action: chat
@@ -1450,7 +1450,7 @@ pages:
               reason_code: 1A.12
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|moderatedelay|chat
             meta:
-              conditions: order.original_promised_time > 10 AND order.original_promised_time <= 20
+              conditions: order.original_promised_time BETWEEN 10:20
             type: form
             submit_text: {{ Chat }}
             action: chat
@@ -1458,7 +1458,7 @@ pages:
               reason_code: 1A.13
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|severdelay|chat
             meta:
-              conditions: order.original_promised_time > 20 AND order.original_promised_time <= 30
+              conditions: order.original_promised_time BETWEEN 20:30
             type: form
             submit_text: {{ Chat }}
             action: chat
@@ -1558,19 +1558,19 @@ pages:
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|orderStatus
         type: link
         meta:
-          conditions: order.original_promised_time > 0 AND order.original_promised_time <= 10
+          conditions: order.original_promised_time BETWEEN 0:10
         text: {{ order_status_link }}
         destination: complaint_about_short_delay.245
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|1620|orderStatus
         type: link
         meta:
-          conditions: order.original_promised_time > 10 AND order.original_promised_time <= 20
+          conditions: order.original_promised_time BETWEEN 10:20
         text: {{ order_status_link }}
         destination: complaint_about_moderate_delay.246
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|2130|orderStatus
         type: link
         meta:
-          conditions: order.original_promised_time > 20 AND order.original_promised_time <= 30
+          conditions: order.original_promised_time BETWEEN 20:30
         text: {{ order_status_link }}
         destination: complaint_about_severe_delay.247
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|31100|orderStatus
@@ -1837,7 +1837,7 @@ pages:
           - id: myOrdersList|OD|PICKEDUP|cancelMyOrder|WithinPromisedTime|content
             type: richContent
             text: {{ cancel_my_order_when_status_is_pickedup_and_ontime }}
-  - id: order_never_arrived.1
+  - id: order_marked_as_delivered_but_didnt_receive.1
     title: {{ my_order_never_arrived }}
     blocks:
       - id: myOrdersList|OD|Delivered|myOrderNeverArrived|blockGroup

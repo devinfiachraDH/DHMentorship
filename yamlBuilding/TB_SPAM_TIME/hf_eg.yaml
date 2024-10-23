@@ -324,14 +324,12 @@ pages:
             meta:
               conditions: order.courier.accepted_time > 0 AND order.delivery_type = platform_delivery
             destination: change_delivery_instructions.1
-      # ========= AUTO CANCELLATION PRE VENDOR ACCEPTANCE ==================================================================================================
-      # "Link" block that leads to "formV2-autoCancellation" block      
       - id: orders|ordersList|orderDetail|OD|cancelMyOrder
         type: blockGroup
         event_id: orders|ordersList|orderDetail|OD|cancelMyOrder
         blocks:
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
-            text: {{ request_cancel_order }} #cancel_my_order - { { fill out with the correct text or add Weblate translation key of your choice } }
+            text: {{ request_cancel_order }}
             type: link
             meta:
               conditions: order.status IN [PENDING, TRANSMITTED, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED, SENT_TO_LOGISTICS, SENDING_TO_VENDOR, DISPLAYED_AT_VENDOR] AND order.delivery_type = platform_delivery
@@ -346,7 +344,7 @@ pages:
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder
             type: link
             text: {{ where_is_my_order }}
-            destination: complain_about_late_order.100
+            destination: check_order_status.505
           - id: myOrdersList|OD|ACCEPTED|addDeliveryInstructions
             type: link
             text: {{ add_delivery_instructions }}
@@ -418,7 +416,7 @@ pages:
             text: {{ my_order_never_arrived }}
             meta:
               conditions: order.delivery_type = platform_delivery AND order.delivered_time <= 240
-            destination: order_never_arrived.1
+            destination: order_marked_as_delivered_but_didnt_receive.1
           - id: myOrdersList|VD|Delivered|myOrderNeverArrived
             type: link
             text: {{ my_order_never_arrived }}
@@ -687,20 +685,20 @@ pages:
             deeplink_url: talabat://?s=riderchat/home&orderId=<<order.orderId>>
             deeplink_title: contact rider
             submit_text: {{ contact_rider }}
-  - id: complain_about_late_order.100
+  - id: check_order_status.505
     title: {{ where_is_my_order }}
     blocks:
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus
         type: link
         text: {{ order_status_link }}
-        destination: complain_about_late_order.1
+        destination: check_order_status.2005
       - id: myOrdersList|ACCEPTED|IssueWithRestaurant
         type: link
         meta:
           conditions: order.creation_time > 10
         text: {{ tgo_issue_with_rest_link }}
         destination: check_order_status.201
-  - id: complain_about_late_order.1
+  - id: check_order_status.2005
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|notExceedPromiseTime
@@ -1057,38 +1055,38 @@ pages:
         meta:
           conditions: order.original_promised_time <= 0
         text: {{ order_status_link }}
-        destination: complain_about_late_order.240
+        destination: check_order_status.240
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 0 AND order.original_promised_time <= 10
         text: {{ order_status_link }}
-        destination: complain_about_late_order.245
+        destination: complaint_about_short_delay.245
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|1620|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 10 AND order.original_promised_time <= 20
         text: {{ order_status_link }}
-        destination: complain_about_late_order.246
+        destination: complaint_about_moderate_delay.246
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|2130|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 20 AND order.original_promised_time <= 30
         text: {{ order_status_link }}
-        destination: complain_about_late_order.247
+        destination: complaint_about_severe_delay.247
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|30100|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 30
         text: {{ order_status_link }}
-        destination: complain_about_late_order.248
+        destination: complaint_about_extreme_delay.248
       - id: myOrdersList|PICKEDUP|IssueWithRideroRRestaurant
         type: link
         meta:
           conditions: order.delivery_type = vendor_delivery
         text: {{ tgo_issue_with_rider_link }}
         destination: check_order_status.202
-  - id: complain_about_late_order.240
+  - id: check_order_status.240
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime
@@ -1099,7 +1097,7 @@ pages:
           - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime|content
             type: richContent
             text: {{ whereIsMyOrder_OD_PICKEDUP_notExceedPromiseTime_Content }}
-  - id: complain_about_late_order.245
+  - id: complaint_about_short_delay.245
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|onlyDelay|content
@@ -1111,7 +1109,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.12
-  - id: complain_about_late_order.246
+  - id: complaint_about_moderate_delay.246
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
@@ -1186,7 +1184,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.13
-  - id: complain_about_late_order.247
+  - id: complaint_about_severe_delay.247
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
@@ -1261,7 +1259,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.14
-  - id: complain_about_late_order.248
+  - id: complaint_about_extreme_delay.248
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
@@ -1329,13 +1327,13 @@ pages:
         action: chat
         constants:
           reason_code: 1A.15
-  - id: order_never_arrived.1
+  - id: order_marked_as_delivered_but_didnt_receive.1
     title: {{ my_order_never_arrived }}
     blocks:
       - id: myOrdersList|OD|Delivered|myOrderNeverArrived|blockGroup
         type: blockGroup
         event_id: myOrdersList|OD|Delivered|myOrderNeverArrived
-        deflection_id: 2B.2
+        deflection_id: 1A.4
         blocks:
           - id: myOrdersList|OD|Delivered|myOrderNeverArrived|content
             type: richContent
@@ -1345,7 +1343,7 @@ pages:
             submit_text: {{ Chat }}
             action: chat
             constants:
-              reason_code: 2B.2
+              reason_code: 1A.4
   - id: order_never_arrived.2
     title: {{ my_order_never_arrived }}
     blocks:
@@ -2496,9 +2494,8 @@ pages:
         result_type: SUCCESS
         title: {{ voucher_issue_success }}
         description: {{ voucher_issue_content }}
-# ========= FORMV2 BLOCK WITH REQUEST-->DECISION-->NAVIGATION ON SUBMIT ==========
   - id: cancellation.autoCancellation
-    title: {{ request_cancel_order }} 
+    title: {{ request_cancel_order }}
     blocks:
       - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
         type: blockGroup
@@ -2507,7 +2504,7 @@ pages:
         blocks:
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|text
             type: richContent
-            text:  {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }}
+            text: {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }}
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|formv2
             type: formV2
             namespace: autoCancellationNamespace
@@ -2542,24 +2539,18 @@ pages:
                     order_id: << order.orderId >>
                     platform_code: << $autoCancellationNamespace.fieldValues.autoCancellationReasonCode >>
                 next_step_id: autoCancellationDecision
-      
               - id: autoCancellationDecision
                 type: decision
                 branches:
-                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.status = 200 AND
-                      $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.status = 200 AND $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
                     next_step_id: navigateToOrderCancelledPage
- #default - else if none of the above conditions are met
                   - next_step_id: navigateToNoFallbackPage
               - id: navigateToOrderCancelledPage
                 type: navigation
                 destination: cancellation.navigateToOrderCancelledPagePreVa
- 
               - id: navigateToNoFallbackPage
                 type: navigation
-                destination: cancellation.navigateToNoFallbackPage 
-
-# ========= RESULT PAGES =========
+                destination: cancellation.navigateToNoFallbackPage
   - id: cancellation.navigateToOrderCancelledPagePreVa
     title: {{request_cancel_order}}
     blocks:
@@ -2567,9 +2558,8 @@ pages:
         type: result
         deflection_id: 1C
         result_type: SUCCESS
-        title: {{order_canceled_success}} 
+        title: {{order_canceled_success}}
         description: {{order_canceled_content}}
-  
   - id: cancellation.navigateToNoFallbackPage
     title: {{request_cancel_order}}
     blocks:

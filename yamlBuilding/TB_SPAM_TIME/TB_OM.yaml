@@ -91,15 +91,30 @@ pages:
             type: link
             text: {{ Where_do_I_see_the_vouchers_I_have_redeemed }}
             destination: reward_program_issue.4
-          - id: tRewardsSubscription|WhereCanISeeMyRewardsPointsHistory
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembership
             type: link
-            text: {{ Where_can_I_see_my_rewards_points_history }}
-            destination: reward_program_issue.5
-          - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount
+            text: {{ How_do_I_renew_my_talabat_Pro_membership }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = False AND customer.subscription.status = True
+            destination: subscription_premium_service_issue.5
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembershipExpired
             type: link
-            text: {{ My_order_was_cancelled_or_Not_placed_and_I_lost_my_reward_voucher_without_getting_any_discount
-              }}
-            destination: reward_program_issue.6
+            text: {{ How_do_I_renew_my_talabat_Pro_membership }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = True AND customer.subscription.status = False
+            destination: subscription_premium_service_issue.5
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits
+            type: link
+            text: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = False AND customer.subscription.status = True
+            destination: subscription_premium_service_issue.6
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefitsExpired
+            type: link
+            text: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = True AND customer.subscription.status = False
+            destination: subscription_premium_service_issue.6
           - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError
             type: link
             text: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error

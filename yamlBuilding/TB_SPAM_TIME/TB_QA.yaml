@@ -97,10 +97,26 @@ pages:
           - id: tproSubscription|HowDoIRenewMyTalabatProMembership
             type: link
             text: {{ How_do_I_renew_my_talabat_Pro_membership }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = False AND customer.subscription.status = True
+            destination: subscription_premium_service_issue.5
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembershipExpired
+            type: link
+            text: {{ How_do_I_renew_my_talabat_Pro_membership }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = True AND customer.subscription.status = False
             destination: subscription_premium_service_issue.5
           - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits
             type: link
             text: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = False AND customer.subscription.status = True
+            destination: subscription_premium_service_issue.6
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefitsExpired
+            type: link
+            text: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+            meta:
+              conditions: customer.cdp.subscription.is_expired = True AND customer.subscription.status = False
             destination: subscription_premium_service_issue.6
           - id: tproSubscription|WhyHaveIBeenChargedAServiceFee
             type: link

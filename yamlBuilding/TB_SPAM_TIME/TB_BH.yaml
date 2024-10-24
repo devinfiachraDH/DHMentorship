@@ -1,0 +1,2907 @@
+template_id: talabat
+engine_version: '2'
+meta:
+  config:
+    base_tweety_url: https://eg.usehurrier.com/app/tweety/web/survey/talabat-after-contact-csat-rider
+    no_contact_tweety_url: https://eg.usehurrier.com/app/tweety/web/survey/talabat-self-service-csat
+pages:
+  - id: mainMenu
+    title: {{ header_how_can_we_help }}
+    blocks:
+      - id: contentGroup
+        type: blockGroup
+        blocks:
+          - id: howCanWeHelp
+            type: heading
+            text: {{ header_how_can_we_help }}
+          - id: myOrders
+            type: link
+            icon: orders
+            text: {{ my_orders }}
+            destination: ordersList
+          - id: placingOrder
+            type: link
+            text: {{ placing_order }}
+            icon: plate-cover
+            destination: information_request_l3.1
+          - id: onlinePayment
+            type: link
+            text: {{ Payment_Information_Label_Version_Two }}
+            icon: payment
+            destination: payment_method_inquiry.1
+          - id: case
+            type: link
+            icon: cases
+            text: {{ my_support_requests }}
+            destination: inbox
+            meta:
+              conditions: is_guest_user = False
+          - id: covidQuestions
+            type: link
+            text: {{ covid19_questions }}
+            icon: healthInformation
+            destination: contactless_delivery_feature_inquiry.1
+          - id: tproSubscription
+            type: link
+            text: {{ tPro_Subscription }}
+            icon_url: https://images.deliveryhero.io/image/talabat/poh/GHC/Talabat_Pro_GHC_Icon.svg
+            destination: customer_account.1
+          - id: tRewardsSubscription
+            type: link
+            text: {{ tRewards_Subscription_MenuLabel }}
+            icon_url: https://images.deliveryhero.io/image/talabat/poh/GHC/Vouchers_GHC_Icon.svg
+            destination: customer_account.2
+          - id: cancellationPolicy
+            type: link
+            text: {{ cancellation_Policy__MenuLabel }}
+            icon: pandaPro
+            destination: cancellation_policy.1
+  - id: cancellation_policy.1
+    title: {{ cancellation_Policy__MenuLabel }}
+    blocks:
+      - id: cancellationPolicy|WhatIsTheCancellationPolicy
+        type: blockGroup
+        event_id: cancellationPolicy|WhatIsTheCancellationPolicy
+        deflection_id: 3D.10
+        blocks:
+          - id: cancellationPolicy|WhatIsTheCancellationPolicy|content
+            type: richContent
+            text: {{ cancellation_policy_content_leaf }}
+  - id: customer_account.2
+    title: {{ tRewards_Subscription_MenuLabel }}
+    blocks:
+      - id: tRewardsSubscription|blockGroup
+        type: blockGroup
+        event_id: tRewardsSubscription
+        blocks:
+          - id: tRewardsSubscription|WhatIsTalabatRewards
+            type: link
+            text: {{ What_is_talabat_rewards }}
+            destination: reward_program_issue.1
+          - id: tRewardsSubscription|HowDoIEarnRewardPoints
+            type: link
+            text: {{ How_do_I_earn_reward_points }}
+            destination: reward_program_issue.2
+          - id: tRewardsSubscription|HowDoIUseRewardPoints
+            type: link
+            text: {{ How_do_I_use_reward_points }}
+            destination: reward_program_issue.3
+          - id: tRewardsSubscription|WhereDoISeeTheVouchersIHaveRedeemed
+            type: link
+            text: {{ Where_do_I_see_the_vouchers_I_have_redeemed }}
+            destination: reward_program_issue.4
+          - id: tRewardsSubscription|WhereCanISeeMyRewardsPointsHistory
+            type: link
+            text: {{ Where_can_I_see_my_rewards_points_history }}
+            destination: reward_program_issue.5
+          - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount
+            type: link
+            text: {{ My_order_was_cancelled_or_Not_placed_and_I_lost_my_reward_voucher_without_getting_any_discount }}
+            destination: reward_program_issue.6
+          - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError
+            type: link
+            text: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error }}
+            destination: reward_program_issue.7
+          - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore
+            type: link
+            text: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store }}
+            destination: reward_program_issue.8
+  - id: reward_program_issue.1
+    title: {{ What_is_talabat_rewards }}
+    blocks:
+      - id: tRewardsSubscription|WhatIsTalabatRewards|contentBlock
+        type: blockGroup
+        event_id: tRewardsSubscription|WhatIsTalabatRewards
+        deflection_id: 3D.10
+        blocks:
+          - id: tRewardsSubscription|WhatIsTalabatRewards|content
+            type: richContent
+            text: {{ tRewardsSubscription_WhatIsTalabatRewards_content }}
+  - id: reward_program_issue.2
+    title: {{ How_do_I_earn_reward_points }}
+    blocks:
+      - id: tRewardsSubscription|HowDoIEarnRewardPoints|contentBlock
+        type: blockGroup
+        event_id: tRewardsSubscription|HowDoIEarnRewardPoints
+        deflection_id: 3D.10
+        blocks:
+          - id: tRewardsSubscription|HowDoIEarnRewardPoints|content
+            type: richContent
+            text: {{ tRewardsSubscription_HowDoIEarnRewardPoints_content }}
+  - id: reward_program_issue.3
+    title: {{ How_do_I_use_reward_points }}
+    blocks:
+      - id: tRewardsSubscription|HowDoIUseRewardPoints|contentBlock
+        type: blockGroup
+        event_id: tRewardsSubscription|HowDoIUseRewardPoints
+        deflection_id: 3D.10
+        blocks:
+          - id: tRewardsSubscription|HowDoIUseRewardPoints|content
+            type: richContent
+            text: {{ tRewardsSubscription_HowDoIUseRewardPoints_content }}
+  - id: reward_program_issue.4
+    title: {{ Where_do_I_see_the_vouchers_I_have_redeemed }}
+    blocks:
+      - id: tRewardsSubscription|WhereDoISeeTheVouchersIHaveRedeemed|contentBlock
+        type: blockGroup
+        event_id: tRewardsSubscription|WhereDoISeeTheVouchersIHaveRedeemed
+        deflection_id: 3D.10
+        blocks:
+          - id: tRewardsSubscription|WhereDoISeeTheVouchersIHaveRedeemed|content
+            type: richContent
+            text: {{ tRewardsSubscription_WhereDoISeeTheVouchersIHaveRedeemed_content }}
+  - id: reward_program_issue.5
+    title: {{ Where_can_I_see_my_rewards_points_history }}
+    blocks:
+      - id: tRewardsSubscription|WhereCanISeeMyRewardsPointsHistory|contentBlock
+        type: blockGroup
+        event_id: tRewardsSubscription|WhereCanISeeMyRewardsPointsHistory
+        deflection_id: 3D.10
+        blocks:
+          - id: tRewardsSubscription|WhereCanISeeMyRewardsPointsHistory|content
+            type: richContent
+            text: {{ tRewardsSubscription_WhereCanISeeMyRewardsPointsHistory_content }}
+  - id: reward_program_issue.6
+    title: {{ My_order_was_cancelled_or_Not_placed_and_I_lost_my_reward_voucher_without_getting_any_discount }}
+    blocks:
+      - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|contentBlock
+        type: blockGroup
+        event_id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount
+        deflection_id: 3D.10
+        blocks:
+          - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|content
+            type: richContent
+            text: {{ tRewardsSubscription_MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount_content }}
+          - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|form
+            type: form
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 3D.10
+            fields:
+              - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|ImageUploader
+                type: multiImageUploader
+                label: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_label }}
+                is_required: true
+                data_key: image_url
+              - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|textArea
+                type: textArea
+                label: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_textArea_label }}
+                is_required: false
+                placeholder: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_textArea_placeholder }}
+                data_key: textArea
+  - id: reward_program_issue.7
+    title: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error }}
+    blocks:
+      - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|contentBlock
+        type: blockGroup
+        event_id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError
+        deflection_id: 3D.10
+        blocks:
+          - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|content
+            type: richContent
+            text: {{ tRewardsSubscription_IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError_content }}
+          - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|form
+            type: form
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 3D.10
+            fields:
+              - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|ImageUploader
+                type: multiImageUploader
+                label: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_label }}
+                is_required: true
+                data_key: image_url
+              - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|textArea
+                type: textArea
+                label: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_textArea_label }}
+                is_required: false
+                placeholder: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_textArea_placeholder }}
+                data_key: textArea
+  - id: reward_program_issue.8
+    title: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store }}
+    blocks:
+      - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|contentBlock
+        type: blockGroup
+        event_id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore
+        deflection_id: 3D.10
+        blocks:
+          - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|content
+            type: richContent
+            text: {{ tRewardsSubscription_IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore_content }}
+          - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|form
+            type: form
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 3D.10
+            fields:
+              - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|ImageUploader
+                type: multiImageUploader
+                label: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_label }}
+                is_required: true
+                data_key: image_url
+              - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|textArea
+                type: textArea
+                label: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_textArea_label }}
+                is_required: false
+                placeholder: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_textArea_placeholder }}
+                data_key: textArea
+  - id: ordersList
+    title: {{ my_orders }}
+    blocks:
+      - id: myOrdersList
+        type: ordersList
+        variant: CUSTOMER
+        destination: orderDetail
+  - id: information_request_l3.1
+    title: {{ placing_order }}
+    blocks:
+      - id: placingOrder|blockGroup
+        type: blockGroup
+        event_id: placingOrder
+        deflection_id: 3E.1
+        blocks:
+          - id: placingOrder|content
+            type: richContent
+            text: {{ placingOrder_content }}
+  - id: payment_method_inquiry.1
+    title: {{ Payment_Information_Label_Version_Two }}
+    blocks:
+      - id: PaymentInformation|blockGroup
+        type: blockGroup
+        event_id: PaymentInformation
+        blocks:
+          - id: PaymentInformation|onlinePayment
+            type: link
+            text: {{ onlinePayment_did_not_go_through }}
+            destination: payment_method_inquiry.2
+          - id: PaymentInformation|ServiceFee
+            type: link
+            text: {{ Service_Fee_Label }}
+            destination: information_request_l3.2
+          - id: PaymentInformation|TransactionDeclined
+            type: link
+            text: {{ My_transaction_was_declined_but_I_got_charged }}
+            destination: payment_issue_inquiry.1
+          - id: PaymentInformation|SomeoneIsUsingMyCard
+            type: link
+            text: {{ Fraud_Someone_is_using_my_card }}
+            destination: payment_issue_inquiry.2
+  - id: payment_method_inquiry.2
+    title: {{ onlinePayment_did_not_go_through }}
+    blocks:
+      - id: PaymentInformation|onlinePayment|blockGroup
+        type: blockGroup
+        event_id: onlinePayment
+        deflection_id: 3E.4
+        blocks:
+          - id: PaymentInformation|onlinePayment|content
+            type: richContent
+            text: {{ onlinePayment_did_not_go_through_content }}
+  - id: information_request_l3.2
+    title: {{ Service_Fee_Label }}
+    blocks:
+      - id: PaymentInformation|ServiceFee|blockGroup
+        type: blockGroup
+        event_id: serviceFee
+        deflection_id: 3E.1
+        blocks:
+          - id: PaymentInformation|WhatIsTalabatNewServiceFee
+            type: link
+            text: {{ What_is_talabat_new_Service_Fee_Label }}
+            destination: information_request_l3.4
+          - id: PaymentInformation|HowIsTheServiceFeeValculated
+            type: link
+            text: {{ How_is_the_Service_Fee_calculated_Label }}
+            destination: information_request_l3.5
+          - id: PaymentInformation|IsTheServiceFeeRefundedIfTheOrderIsCancelledByTalabatOrTheVendor
+            type: link
+            text: {{ Is_the_Service_Fee_refunded_if_the_order_is_cancelled_by_talabat_or_the_vendor_Label }}
+            destination: information_request_l3.6
+          - id: PaymentInformation|DoTProCustomersPayTheServiceFee
+            type: link
+            text: {{ Do_tPro_customers_pay_the_Service_Fee_Label }}
+            destination: information_request_l3.7
+  - id: information_request_l3.4
+    title: {{ What_is_talabat_new_Service_Fee_Label }}
+    blocks:
+      - id: PaymentInformation|WhatIsTalabatNewServiceFee|contentBlock
+        type: blockGroup
+        event_id: PaymentInformation|WhatIsTalabatNewServiceFee
+        deflection_id: 3E.1
+        blocks:
+          - id: PaymentInformation|WhatIsTalabatNewServiceFee|content
+            type: richContent
+            text: {{ WhatIsTalabatNewServiceFee_content }}
+  - id: information_request_l3.5
+    title: {{ How_is_the_Service_Fee_calculated_Label }}
+    blocks:
+      - id: PaymentInformation|HowIsTheServiceFeeValculated|contentBlock
+        type: blockGroup
+        event_id: PaymentInformation|HowIsTheServiceFeeValculated
+        deflection_id: 3E.1
+        blocks:
+          - id: PaymentInformation|HowIsTheServiceFeeValculated|content
+            type: richContent
+            text: {{ HowIsTheServiceFeeCalculated_content }}
+  - id: information_request_l3.6
+    title: {{ Is_the_Service_Fee_refunded_if_the_order_is_cancelled_by_talabat_or_the_vendor_Label }}
+    blocks:
+      - id: PaymentInformation|IsTheServiceFeeRefundedIfTheOrderIsCancelledByTalabatOrTheVendor|contentBlock
+        type: blockGroup
+        event_id: PaymentInformation|IsTheServiceFeeRefundedIfTheOrderIsCancelledByTalabatOrTheVendor
+        deflection_id: 3E.1
+        blocks:
+          - id: PaymentInformation|IsTheServiceFeeRefundedIfTheOrderIsCancelledByTalabatOrTheVendor|content
+            type: richContent
+            text: {{ IsTheServiceFeeRefundedIfTheOrderIsCancelledByTalabatOrTheVendor_content }}
+  - id: information_request_l3.7
+    title: {{ Do_tPro_customers_pay_the_Service_Fee_Label }}
+    blocks:
+      - id: PaymentInformation|DoTProCustomersPayTheServiceFee|contentBlock
+        type: blockGroup
+        event_id: PaymentInformation|DoTProCustomersPayTheServiceFee
+        deflection_id: 3E.1
+        blocks:
+          - id: PaymentInformation|DoTProCustomersPayTheServiceFee|content
+            type: richContent
+            text: {{ DoTProCustomersPayTheServiceFee_content }}
+  - id: payment_issue_inquiry.1
+    title: {{ My_transaction_was_declined_but_I_got_charged }}
+    blocks:
+      - id: PaymentInformation|onlinePayment|blockGroup
+        type: blockGroup
+        event_id: onlinePayment
+        deflection_id: 2F.4
+        blocks:
+          - id: PaymentInformation|onlinePayment|content
+            type: richContent
+            text: {{ My_transaction_was_declined_but_I_got_charged_content }}
+          - id: PaymentInformation|onlinePayment|TransactionDeclined|form
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 2F.4
+            fields:
+              - id: PaymentInformation|onlinePayment|FileUploader
+                type: fileUploader
+                label: {{ Attach_bank_statement_label }}
+                is_required: true
+                data_key: file_url
+  - id: payment_issue_inquiry.2
+    title: {{ Fraud_Someone_is_using_my_card }}
+    blocks:
+      - id: PaymentInformation|onlinePayment|blockGroup
+        type: blockGroup
+        event_id: onlinePayment
+        deflection_id: 2F.6
+        blocks:
+          - id: PaymentInformation|onlinePayment|content
+            type: richContent
+            text: {{ Fraud_Someone_is_using_my_card_content }}
+          - id: PaymentInformation|onlinePayment|SomoneIsUsingMyCard|form
+            type: form
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2F.6
+            fields:
+              - id: PaymentInformation|onlinePayment|OrderNumber
+                type: textInput
+                label: {{ Somone_Is_Using_MyCard_Form_Label }}
+                is_required: false
+                placeholder: {{ Somone_Is_Using_My_Card_Form_OrderNumber_Placeholder }}
+                data_key: Somone_Is_Using_My_Card_Form_OrderNumber
+              - id: PaymentInformation|onlinePayment|TransactionDate
+                type: textInput
+                is_required: true
+                placeholder: {{ Somone_Is_Using_My_Card_Form_TransactionDate_Placeholder }}
+                data_key: Somone_Is_Using_My_Card_Form_TransactionDate
+              - id: PaymentInformation|onlinePayment|TransactionAmount
+                type: textInput
+                is_required: true
+                placeholder: {{ Somone_Is_Using_My_Card_Form_TransactionAmount_Placeholder }}
+                data_key: Somone_Is_Using_My_Card_Form_TransactionAmount
+              - id: PaymentInformation|onlinePayment|FirstSixDigits
+                type: textInput
+                is_required: true
+                placeholder: {{ Somone_Is_Using_My_Card_Form_FirstSixDigits_Placeholder }}
+                data_key: Somone_Is_Using_My_Card_Form_FirstSixDigits
+              - id: PaymentInformation|onlinePayment|LastFourDigits
+                type: textInput
+                is_required: true
+                placeholder: {{ Somone_Is_Using_My_Card_Form_LastFourDigits_Placeholder }}
+                data_key: Somone_Is_Using_My_Card_Form_LastFourDigits
+              - id: PaymentInformation|onlinePayment|TransactionCurrency
+                type: textInput
+                is_required: true
+                placeholder: {{ Somone_Is_Using_My_Card_Form_TransactionCurrency_Placeholder }}
+                data_key: Somone_Is_Using_My_Card_Form_TransactionCurrency
+              - id: PaymentInformation|onlinePayment|Comments
+                type: textInput
+                is_required: true
+                placeholder: {{ Somone_Is_Using_My_Card_Form_Comments_Placeholder }}
+                data_key: Somone_Is_Using_My_Card_Form_Comments
+  - id: inbox
+    title: {{ my_support_requests }}
+    blocks:
+      - id: cases|info
+        type: heading
+        text: {{ my_support_requests }}
+      - id: cases|casesList
+        type: casesList
+        event_id: cases|casesList
+  - id: contactless_delivery_feature_inquiry.1
+    title: {{ covid19_questions }}
+    blocks:
+      - id: covidQuestions|blockGroup
+        type: blockGroup
+        event_id: covidQuestions
+        deflection_id: 3E.3
+        blocks:
+          - id: covidQuestions|content
+            type: richContent
+            text: {{ covid19_questions_content }}
+  - id: orderDetail
+    title: {{ where_is_my_order }}
+    blocks:
+      - id: myOrdersList|OD|TRANSMITTED
+        type: selectedOrderDetail
+        variant: CUSTOMER
+        text: {{ where_is_my_order }}
+        meta:
+          conditions: order.status IN [PENDING, DISPLAYED_AT_VENDOR, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED, SENT_TO_LOGISTICS, SENDING_TO_VENDOR, TRANSMITTED, WAITING_FOR_VALIDATION] AND order.delivery_type IN [platform_delivery, vendor_delivery]
+        blocks:
+          - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder
+            type: link
+            text: {{ where_is_my_order }}
+            destination: check_order_status.100
+          - id: myOrdersList|OD|TRANSMITTED|addDeliveryInstructions
+            type: link
+            text: {{ add_delivery_instructions }}
+            meta:
+              conditions: order.courier.accepted_time > 0 AND order.delivery_type = platform_delivery
+            destination: change_delivery_instructions.1
+      # ========= AUTO CANCELLATION PRE VENDOR ACCEPTANCE ==================================================================================================
+      # "Link" block that leads to "formV2-autoCancellation" block      
+      - id: orders|ordersList|orderDetail|OD|cancelMyOrder
+        type: blockGroup
+        event_id: orders|ordersList|orderDetail|OD|cancelMyOrder
+        blocks:
+          - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
+            text: {{ request_cancel_order }} #cancel_my_order - { { fill out with the correct text or add Weblate translation key of your choice } }
+            type: link
+            meta:
+              conditions: order.status IN [PENDING, TRANSMITTED, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED, SENT_TO_LOGISTICS, SENDING_TO_VENDOR, DISPLAYED_AT_VENDOR] AND order.delivery_type = platform_delivery
+            destination: cancellation.autoCancellation
+      - id: myOrdersList|OD|ACCEPTED
+        type: selectedOrderDetail
+        variant: CUSTOMER
+        text: {{ where_is_my_order }}
+        meta:
+          conditions: order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED]
+        blocks:
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder
+            type: link
+            text: {{ where_is_my_order }}
+            destination: complain_about_late_order.100
+          - id: myOrdersList|OD|ACCEPTED|addDeliveryInstructions
+            type: link
+            text: {{ add_delivery_instructions }}
+            meta:
+              conditions: order.courier.accepted_time > 0 AND order.delivery_type = platform_delivery
+            destination: change_delivery_instructions.1
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|WithinPromisedTime|RestaurantsVertical
+            type: link
+            text: {{ request_cancel_order }}
+            meta:
+              conditions: order.original_promised_time < 0 AND order.vertical_type = restaurants
+            destination: page.cancelFoodOrderOnTimePostVA
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|WithinPromisedTime|NonRestaurantsVertical
+            type: link
+            text: {{ request_cancel_order }}
+            meta:
+              conditions: order.original_promised_time < 0 AND order.vertical_type NOT IN [restaurants]
+            destination: page.cancelNonFoodOrderOnTimePostVA
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|PlatformDelivery|ExceededPromisedTime
+            type: link
+            text: {{ request_cancel_order }}
+            meta:
+              conditions: order.delivery_type = platform_delivery AND order.original_promised_time >= 0
+            destination: page.cancelDelayedOrderPostVACompensation
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|NonPlatformDelivery|ExceededPromisedTime
+            type: link
+            text: {{ request_cancel_order }}
+            meta:
+              conditions: order.delivery_type != platform_delivery AND order.original_promised_time >= 0
+            destination: page.cancelDelayedOrderPostVA
+      - id: myOrdersList|OD|PICKEDUP
+        type: selectedOrderDetail
+        variant: CUSTOMER
+        text: {{ where_is_my_order }}
+        meta:
+          conditions: order.delivery_type IN [platform_delivery, vendor_delivery] AND order.status IN [PICKED_UP, COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF]
+        blocks:
+          - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder
+            type: link
+            text: {{ where_is_my_order }}
+            destination: complain_about_late_order.200
+          - id: myOrdersList|OD|PICKEDUP|addDeliveryInstructions
+            type: link
+            text: {{ add_delivery_instructions }}
+            meta:
+              conditions: order.courier.accepted_time > 0 AND order.delivery_type = platform_delivery
+            destination: change_delivery_instructions.1
+          - id: myOrdersList|OD|PICKEDUP|cancelMyOrder|WithinPromisedTime
+            type: link
+            text: {{ request_cancel_order }}
+            meta:
+              conditions: order.original_promised_time <= 0
+            destination: page.cancelPickedupOrderOnTime
+          - id: myOrdersList|OD|PICKEDUP|cancelMyOrder|ExceededPromisedTime
+            type: link
+            text: {{ request_cancel_order }}
+            meta:
+              conditions: order.original_promised_time > 0
+            destination: page.cancelDelayedOrderPickedUpCompensation
+      - id: myOrdersList|Delivered
+        type: selectedOrderDetail
+        variant: CUSTOMER
+        text: {{ my_order_never_arrived }}
+        meta:
+          conditions: order.status = DELIVERED
+        blocks:
+          - id: myOrdersList|OD|Delivered|myOrderNeverArrived
+            type: link
+            text: {{ my_order_never_arrived }}
+            meta:
+              conditions: order.delivery_type = platform_delivery AND order.delivered_time <= 240
+            destination: order_never_arrived.1
+          - id: myOrdersList|VD|Delivered|myOrderNeverArrived
+            type: link
+            text: {{ my_order_never_arrived }}
+            meta:
+              conditions: order.delivery_type = vendor_delivery AND order.accepted_time <= 240
+            destination: order_never_arrived.2
+          - id: myOrdersList|Delivered|Food|BeforeTimeLine
+            type: blockGroup
+            meta:
+              conditions: order.vertical_type = restaurants AND order.delivered_time < 1440
+            blocks:
+              - id: myOrdersList|Delivered|Food|BeforeTimeLine|MissingIncorrectItems
+                type: link
+                text: {{ Items_are_missing_incorrect }}
+                destination: page.1
+              - id: myOrdersList|Delivered|Food|BeforeTimeLine|WrongOrder
+                type: link
+                event_id: myOrdersList|Delivered|Food|BeforeTimeLine|WrongOrder
+                text: {{ my_whole_order_is_wrong }}
+                destination: wrong_order_never_arrived.1
+              - id: myOrdersList|Delivered|Food|BeforeTimeLine|QualityIssue
+                type: link
+                event_id: myOrdersList|Delivered|Food|BeforeTimeLine|QualityIssue
+                text: {{ qualiy_issue }}
+                destination: page.3
+          - id: myOrdersList|Delivered|Food|AfterTimeLine
+            type: blockGroup
+            meta:
+              conditions: order.vertical_type = restaurants AND order.delivered_time >= 1440
+            blocks:
+              - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems
+                event_id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems
+                text: {{ Items_are_missing_incorrect }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder
+                event_id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder
+                text: {{ my_whole_order_is_wrong }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue
+                event_id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue
+                text: {{ qualiy_issue }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+          - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine
+            type: blockGroup
+            meta:
+              conditions: order.vertical_type NOT IN [restaurants] AND order.delivered_time < 20160
+            blocks:
+              - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|MissingIncorrectItems
+                type: link
+                text: {{ Items_are_missing_incorrect }}
+                destination: page.1
+              - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|WrongOrder
+                type: link
+                event_id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|WrongOrder
+                text: {{ my_whole_order_is_wrong }}
+                destination: wrong_order_never_arrived.1
+              - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|QualityIssue
+                type: link
+                event_id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|QualityIssue
+                text: {{ qualiy_issue }}
+                destination: page.3
+          - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine
+            type: blockGroup
+            meta:
+              conditions: order.vertical_type NOT IN [restaurants] AND order.delivered_time >= 20160
+            blocks:
+              - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems
+                event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems
+                text: {{ Items_are_missing_incorrect }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder
+                event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder
+                text: {{ my_whole_order_is_wrong }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue
+                event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue
+                text: {{ qualiy_issue }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+          - id: myOrdersList|Delivered|RiderIssue
+            type: link
+            event_id: myOrdersList|Delivered|RiderIssue
+            text: {{ rider_issues_label }}
+            destination: page.2
+          - id: myOrdersList|Delivered|PaymentsAndRefunds
+            type: link
+            event_id: myOrdersList|Delivered|PaymentsAndRefunds
+            text: {{ payments_and_refunds_label }}
+            destination: page.5
+      - id: myOrdersList|CANCELLED|WhereIsMyRefund
+        type: link
+        text: {{ where_is_my_refund }}
+        meta:
+          conditions: order.status IN [CANCELLED, EXPIRED, REJECTED, FAILED, PENDING_ORDER_FAILED]
+        destination: refund_query.1
+  - id: page.cancelFoodOrderOnTimePostVA
+    title: {{ request_cancel_order }}
+    blocks:
+      - id: myOrdersList|ACCEPTED|cancelMyOrder|WithinPromisedTime|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|ACCEPTED|cancelMyOrder|WithinPromisedTime
+        deflection_id: 7A.2
+        blocks:
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|WithinPromisedTime|contentBlock
+            type: blockGroup
+            blocks:
+              - id: myOrdersList|ACCEPTED|cancelMyOrder|WithinPromisedTime|content
+                type: richContent
+                text: {{ cancel_my_order_when_status_is_preparing_and_ontime }}
+  - id: page.cancelNonFoodOrderOnTimePostVA
+    title: {{ request_cancel_order }}
+    blocks:
+      - id: myOrdersList|ACCEPTED|cancelMyOrder|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|ACCEPTED|cancelMyOrder
+        deflection_id: 1C
+        blocks:
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|contentBlock
+            type: blockGroup
+            blocks:
+              - id: myOrdersList|ACCEPTED|cancelMyOrder|Heading|content
+                type: richContent
+                text: {{ myOrdersList_ACCEPTED_cancelMyOrder_content }}
+              - id: myOrdersList|ACCEPTED|cancelMyOrder|chat
+                type: form
+                submit_text: {{ Chat }}
+                action: chat
+                constants:
+                  reason_code: 1C
+                  subject: Cancel order
+                fields:
+                  - id: myOrdersList|ACCEPTED|cancelMyOrder|SelectReasons|Form
+                    type: singleSelect
+                    data_key: reason_code
+                    is_required: true
+                    choices:
+                      - value: 1C.4
+                        text: {{ reason_for_cancelling_wrong_address }}
+                      - value: 1C.3
+                        text: {{ reason_for_cancelling_my_voucher_wasnt_applied }}
+                      - value: 1C.4
+                        text: {{ reason_for_cancelling_unable_to_edit_order }}
+                      - value: 1C.10
+                        text: {{ reason_for_cancelling_issue_with_the_rider }}
+                      - value: 1C.9
+                        text: {{ reason_for_cancelling_issue_with_restaurant_or_store }}
+                      - value: 1C.5
+                        text: {{ reason_for_cancelling_waiting_time_is_too_long }}
+                      - value: 1C.6
+                        text: {{ reason_for_cancelling_changed_my_mind }}
+  - id: page.cancelDelayedOrderPostVACompensation
+    title: {{ request_cancel_order }}
+    blocks:
+      - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTime|WaitingTimeIsTooLong|Below40MinsDelay
+        type: link
+        text: {{ reason_for_cancelling_waiting_time_is_too_long }}
+        meta:
+          conditions: order.original_promised_time < 40
+        destination: page.cancelDelayedOrderPostVA
+      - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTime|WaitingTimeIsTooLong|Exceeded40MinsDelay
+        type: link
+        text: {{ reason_for_cancelling_waiting_time_is_too_long }}
+        meta:
+          conditions: order.original_promised_time >= 40
+        destination: page.cancelPostVAWaitingTimeTooLongPDTExceeded40
+      - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTime|IssueWithRestaurantOrRider
+        type: link
+        text: {{ issue_with_the_restaurant_or_rider }}
+        destination: page.cancelDelayedOrderPostVA
+  - id: page.cancelPostVAWaitingTimeTooLongPDTExceeded40
+    title: {{ reason_for_cancelling_waiting_time_is_too_long }}
+    blocks:
+      - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTimeBy40|WaitingTimeIsTooLong
+        type: blockGroup
+        deflection_id: 1C.5
+        blocks:
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTimeBy40|WaitingTimeIsTooLong|Content
+            type: richContent
+            text: {{ post_acceptance_cancellation_content }}
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTimeBy40|WaitingTimeIsTooLong|CancelButton
+            type: formV2
+            namespace: autoCancellationSubmission
+            meta:
+              conditions: $reactiveCompEvaluate.response.body.type != reactive_compensation_recommendation
+            submit_button_text: {{ cancel_my_order }}
+            constants:
+              reason_code: 1C.5
+            on_submit:
+              - id: autoCancellationRequest
+                type: request
+                action:
+                  type: autoCancellation
+                  params:
+                    is_refundable: false
+                    order_id: << order.orderId >>
+                    platform_code: LATE_DELIVERY
+                next_step_id: autoCancellationDecision
+              - id: autoCancellationDecision
+                type: decision
+                branches:
+                  - conditions: $autoCancellationSubmission.steps.autoCancellationRequest.response.status = 200 AND $autoCancellationSubmission.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                    next_step_id: navigateToOrderCancelledPage
+                  - next_step_id: navigateToChatPage
+              - id: navigateToOrderCancelledPage
+                type: navigation
+                destination: page.navigateToOrderCancelledPage
+              - id: navigateToChatPage
+                type: navigation
+                destination: page.cancelDelayedOrderPostVA
+  - id: page.cancelPickedUpWaitingTimeTooLongPDTExceeded
+    title: {{ reason_for_cancelling_waiting_time_is_too_long }}
+    meta:
+      before_display:
+        namespace: reactiveCompEvaluate
+        endpoint:
+          url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/evaluate
+          method: POST
+          request_body_casing: snake
+          has_default_helpcenter_headers: true
+          body:
+            order_id: << order.orderId >>
+            reason_code: 1C.5
+            transaction_id: << order.transactionId >>
+            helpcenter_session_id: << analytics.sessionId >>
+            local_contact_reason: 107
+    blocks:
+      - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong
+        type: blockGroup
+        deflection_id: 1C.5
+        blocks:
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|ReactiveCompNotRecommendedContent
+            type: richContent
+            meta:
+              conditions: $reactiveCompEvaluate.response.body.type != reactive_compensation_recommendation AND $reactiveCompEvaluate.response.body.type != voucher_already_created
+            text: {{ cancel_my_order_when_status_is_pickedup_and_delayed }}
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|VoucherAlreadyClaimed
+            type: blockGroup
+            event_id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|VoucherAlreadyClaimed
+            deflection_id: 1C.5
+            meta:
+              conditions: $reactiveCompEvaluate.response.body.type = voucher_already_created
+            blocks:
+              - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|VoucherAlreadyClaimedContent
+                type: richContent
+                text: {{ pickedUp_cancelMyOrder_ExceededPromisedTime_VoucherAlreadyClaimed }}
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|VoucherContent
+            type: richContent
+            meta:
+              conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+            text: {{ delayed_order_cancellation_comp_voucher_msg }}
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|ClaimVoucherButton
+            type: formV2
+            meta:
+              conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+            namespace: reactiveCompApply
+            submit_button_text: Claim <<$reactiveCompEvaluate.response.body.payload.recommendation_value>> <<order.currency>> voucher
+            constants:
+              reason_code: 1C.5
+            on_submit:
+              - id: reactiveCompApplyRequest
+                type: request
+                endpoint:
+                  url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/apply
+                  method: POST
+                  has_default_helpcenter_headers: true
+                  request_body_casing: snake
+                  body:
+                    key: <<$reactiveCompEvaluate.response.body.payload.id>>
+                    order_id: <<order.orderId>>
+                    choice: voucher
+                    local_contact_reason: 107
+                next_step_id: reactiveCompApplyResponse
+              - id: reactiveCompApplyResponse
+                type: decision
+                branches:
+                  - conditions: $reactiveCompApply.steps.reactiveCompApplyRequest.response.body.type = voucher_created
+                    next_step_id: navigateToVoucherCreatedPage
+                  - next_step_id: navigateToChatPage
+              - id: navigateToVoucherCreatedPage
+                type: navigation
+                destination: page.navigateToVoucherCreatedPage
+              - id: navigateToChatPage
+                type: navigation
+                destination: page.navigateToChatPageReactiveCompensation
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|CompensationRecommended|PlatformDelivery|CancelButton
+            type: formV2
+            namespace: autoCancellationSubmission
+            meta:
+              conditions: order.delivery_type = platform_delivery AND $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+            submit_button_text: {{ cancel_my_order }}
+            constants:
+              reason_code: 1C.5
+            on_submit:
+              - id: autoCancellationRequest
+                type: request
+                action:
+                  type: autoCancellation
+                  params:
+                    is_refundable: false
+                    order_id: << order.orderId >>
+                    platform_code: LATE_DELIVERY
+                next_step_id: autoCancellationDecision
+              - id: autoCancellationDecision
+                type: decision
+                branches:
+                  - conditions: $autoCancellationSubmission.steps.autoCancellationRequest.response.status = 200 AND $autoCancellationSubmission.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                    next_step_id: navigateToOrderCancelledPage
+                  - next_step_id: navigateToChatPage
+              - id: navigateToOrderCancelledPage
+                type: navigation
+                destination: page.navigateToOrderCancelledPage
+              - id: navigateToChatPage
+                type: navigation
+                destination: page.cancelDelayedOrderPostVA
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|CompensationRecommended|NonPlatformDelivery|ChatButton
+            type: form
+            meta:
+              conditions: order.delivery_type != platform_delivery AND $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1C.5
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|CompNotRecommended|ChatButton
+            type: form
+            meta:
+              conditions: $reactiveCompEvaluate.response.body.type != reactive_compensation_recommendation AND $reactiveCompEvaluate.response.body.type != voucher_already_created
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1C.5
+  - id: page.navigateToOrderCancelledPage
+    title: {{ order_canceled_success }}
+    blocks:
+      - id: automationCancellation|success
+        type: result
+        result_type: SUCCESS
+        title: {{ order_canceled_success }}
+        description: {{ order_canceled_content }}
+      - id: automationCancellation|success|textcloseButton
+        type: button
+        destination: mainMenu
+        text: {{ addr_modification_close_help_center }}
+        variant: primary
+  - id: page.cancelDelayedOrderPickedUpCompensation
+    title: {{ request_cancel_order }}
+    blocks:
+      - id: myOrdersList|PICKEDUP|cancelMyOrder|ExceededPromisedTime|WaitingTimeIsTooLong
+        type: link
+        text: {{ reason_for_cancelling_waiting_time_is_too_long }}
+        destination: page.cancelPickedUpWaitingTimeTooLongPDTExceeded
+      - id: myOrdersList|PICKEDUP|cancelMyOrder|ExceededPromisedTime|IssueWithRestaurantOrRider
+        type: link
+        text: {{ issue_with_the_restaurant_or_rider }}
+        destination: page.cancelDelayedPickedupOrder
+  - id: page.cancelDelayedOrderPostVA
+    title: {{ request_cancel_order }}
+    blocks:
+      - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTime|contentBlock
+        type: blockGroup
+        event_id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTime
+        deflection_id: 1A.9
+        blocks:
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTime|content
+            type: richContent
+            text: {{ cancel_my_order_when_status_is_preparing_and_delayed }}
+          - id: myOrdersList|ACCEPTED|cancelMyOrder|ExceededPromisedTime|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.9
+  - id: page.cancelPickedupOrderOnTime
+    title: {{ request_cancel_order }}
+    blocks:
+      - id: myOrdersList|OD|PICKEDUP|cancelMyOrder|WithinPromisedTime|contentBlock
+        type: blockGroup
+        event_id: myOrdersList|OD|PICKEDUP|cancelMyOrder|WithinPromisedTime
+        deflection_id: 7A.2
+        blocks:
+          - id: myOrdersList|OD|PICKEDUP|cancelMyOrder|WithinPromisedTime|content
+            type: richContent
+            text: {{ cancel_my_order_when_status_is_pickedup_and_ontime }}
+  - id: page.cancelDelayedPickedupOrder
+    title: {{ request_cancel_order }}
+    blocks:
+      - id: myOrdersList|PICKEDUP|cancelMyOrder|ExceededPromisedTime|contentBlock
+        type: blockGroup
+        event_id: myOrdersList|PICKEDUP|cancelMyOrder|ExceededPromisedTime
+        deflection_id: 1A.9
+        blocks:
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|ExceededPromisedTime|content
+            type: richContent
+            text: {{ cancel_my_order_when_status_is_pickedup_and_delayed }}
+          - id: myOrdersList|PICKEDUP|cancelMyOrder|ExceededPromisedTime|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.9
+  - id: page.5
+    title: {{ payments_and_refunds_label }}
+    blocks:
+      - id: myOrdersList|Delivered|PaymentsAndRefunds
+        type: link
+        text: {{ I_have_not_received_refund_yet }}
+        destination: page.6
+  - id: page.6
+    title: {{ I_have_not_received_refund_yet }}
+    blocks:
+      - id: myOrdersList|Delivered|PaymentsAndRefunds|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|PaymentsAndRefunds|EventId
+        deflection_id: 2F.4
+        blocks:
+          - id: myOrdersList|Delivered|PaymentsAndRefunds|WithinSLA|content
+            type: richContent
+            meta:
+              conditions: order.delivered_time < 10080
+            text: {{ payments_and_refunds_within_sla_content }}
+          - id: myOrdersList|Delivered|PaymentsAndRefunds|OutsideSLA|content
+            type: richContent
+            meta:
+              conditions: order.delivered_time >= 10080
+            text: {{ payments_and_refunds_outside_sla_content }}
+          - id: myOrdersList|Delivered|PaymentsAndRefunds|OutsideSLA|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 10080
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2F.4
+            fields:
+              - id: myOrdersList|Delivered|PaymentsAndRefunds|FileUploader
+                type: imageUploader
+                label: {{ Attach_bank_statement_label }}
+                is_required: true
+                data_key: file_url
+  - id: check_order_status.201
+    title: {{ tgo_issue_with_rest_link }}
+    blocks:
+      - id: myOrdersList|ACCEPTED|IssueWithRestaurant|contentBlock
+        type: blockGroup
+        event_id: myOrdersList|ACCEPTED|IssueWithRestaurant
+        deflection_id: 2E.1
+        blocks:
+          - id: myOrdersList|ACCEPTED|IssueWithRestaurant|content
+            type: richContent
+            text: {{ tgo_issue_with_rest_or_rider_content }}
+          - id: myOrdersList|ACCEPTED|IssueWithRestaurant|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 2E.1
+  - id: check_order_status.202
+    title: {{ tgo_issue_with_rider_link }}
+    blocks:
+      - id: myOrdersList|delivering|IssueWithHeroRider|contentBlock
+        type: blockGroup
+        event_id: myOrdersList|ACCEPTED|IssueWithHeroRider
+        deflection_id: 2E.1
+        blocks:
+          - id: myOrdersList|ACCEPTED|IssueWithHeroRider|content
+            type: richContent
+            text: {{ tgo_issue_with_rest_or_rider_content }}
+          - id: myOrdersList|ACCEPTED|IssueWithHeroRider|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 2E.1
+  - id: check_order_status.100
+    title: {{ where_is_my_order }}
+    blocks:
+      - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|orderStatus
+        type: link
+        text: {{ order_status_link }}
+        event_id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|orderStatus
+        destination: check_order_status.1
+      - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes|issueWithRestaurant
+        type: link
+        meta:
+          conditions: order.delivery_type = vendor_delivery
+        text: {{ tgo_issue_with_rest_link }}
+        event_id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes|issueWithRestaurant
+        destination: check_order_status.201
+  - id: check_order_status.1
+    title: {{ order_status_link }}
+    blocks:
+      - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes
+        type: blockGroup
+        event_id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes
+        deflection_id: 1A.1
+        meta:
+          conditions: order.creation_time < 5 AND order.delivery_type = platform_delivery
+        blocks:
+          - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes|content
+            type: richContent
+            text: {{ whereIsMyOrder_OD_TRANSMITTED_LessThansFiveMinutes_Content }}
+      - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes
+        type: blockGroup
+        event_id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes
+        deflection_id: 1A.1
+        meta:
+          conditions: order.creation_time >= 5 AND order.delivery_type = platform_delivery
+        blocks:
+          - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes|content
+            type: richContent
+            text: {{ whereIsMyOrder_OD_TRANSMITTED_MoreThansFiveMinutes_Content }}
+          - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes|form|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.1
+      - id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes
+        type: blockGroup
+        event_id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes
+        deflection_id: 1A.1
+        meta:
+          conditions: order.creation_time < 5 AND order.delivery_type = vendor_delivery
+        blocks:
+          - id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes|content
+            type: richContent
+            text: {{ whereIsMyOrder_VD_TRANSMITTED_LessThansFiveMinutes_Content }}
+          - id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes|form
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.1
+      - id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes
+        type: blockGroup
+        event_id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes
+        deflection_id: 1A.1
+        meta:
+          conditions: order.creation_time >= 5 AND order.delivery_type = vendor_delivery
+        blocks:
+          - id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes|content
+            type: richContent
+            text: {{ whereIsMyOrder_VD_TRANSMITTED_MoreThansFiveMinutes_Content }}
+          - id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes|form|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.1
+  - id: change_delivery_instructions.1
+    title: {{ add_delivery_instructions }}
+    blocks:
+      - id: myOrdersList|OD|addDeliveryInstructions|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|OD|addDeliveryInstructions|blockGroup
+        deflection_id: 1B.3
+        blocks:
+          - id: myOrdersList|OD|addDeliveryInstructions|content
+            type: richContent
+            text: {{ myOrdersList_OD_TRANSMITTED_addDeliveryInstructions_content }}
+          - id: myOrdersList|OD|riderChat
+            type: deepLink
+            deeplink_url: talabat://?s=riderchat/home&orderId=<<order.orderId>>
+            deeplink_title: contact rider
+            submit_text: {{ contact_rider }}
+  - id: complain_about_late_order.100
+    title: {{ where_is_my_order }}
+    blocks:
+      - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus
+        type: link
+        text: {{ order_status_link }}
+        destination: complain_about_late_order.1
+      - id: myOrdersList|ACCEPTED|IssueWithRestaurant
+        type: link
+        meta:
+          conditions: order.creation_time > 10
+        text: {{ tgo_issue_with_rest_link }}
+        destination: check_order_status.201
+  - id: complain_about_late_order.1
+    title: {{ order_status_link }}
+    blocks:
+      - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|notExceedPromiseTime
+        type: blockGroup
+        event_id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|notExceedPromiseTime
+        deflection_id: 1A.1
+        meta:
+          conditions: order.original_promised_time < 0 AND order.delivery_type = platform_delivery
+        blocks:
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|notExceedPromiseTime|content
+            type: richContent
+            text: {{ whereIsMyOrder_OD_ACCEPTED_notExceedPromiseTime_Content }}
+      - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime
+        type: blockGroup
+        event_id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime
+        deflection_id: 1A.2
+        meta:
+          conditions: order.original_promised_time >= 0 AND order.delivery_type = platform_delivery
+        blocks:
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|content
+            type: richContent
+            text: {{ whereIsMyOrder_OD_ACCEPTED_exceededPromiseTime_Content }}
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.2
+      - id: myOrdersList|VD|ACCEPTED|whereIsMyOrder
+        type: blockGroup
+        event_id: myOrdersList|VD|ACCEPTED|whereIsMyOrder
+        deflection_id: 1A.1
+        meta:
+          conditions: order.delivery_type = vendor_delivery
+        blocks:
+          - id: myOrdersList|VD|ACCEPTED|whereIsMyOrder|content
+            type: richContent
+            text: {{ whereIsMyOrder_VD_ACCEPTED_Content }}
+          - id: myOrdersList|VD|ACCEPTED|whereIsMyOrder|vendorPhoneLink
+            type: vendorPhoneLink
+            action: vendorPhoneAction
+          - id: myOrdersList|VD|ACCEPTED|whereIsMyOrder|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.1
+  - id: complain_about_late_order.200
+    title: {{ where_is_my_order }}
+    blocks:
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|beforeDelay|orderStatus
+        type: link
+        meta:
+          conditions: order.original_promised_time <= 0
+        text: {{ order_status_link }}
+        destination: complain_about_late_order.240
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|orderStatus
+        type: link
+        meta:
+          conditions: order.original_promised_time > 0 AND order.original_promised_time <= 10
+        text: {{ order_status_link }}
+        destination: complain_about_late_order.245
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|1620|orderStatus
+        type: link
+        meta:
+          conditions: order.original_promised_time > 10 AND order.original_promised_time <= 20
+        text: {{ order_status_link }}
+        destination: complain_about_late_order.246
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|2130|orderStatus
+        type: link
+        meta:
+          conditions: order.original_promised_time > 20 AND order.original_promised_time <= 30
+        text: {{ order_status_link }}
+        destination: complain_about_late_order.247
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|30100|orderStatus
+        type: link
+        meta:
+          conditions: order.original_promised_time > 30
+        text: {{ order_status_link }}
+        destination: complain_about_late_order.248
+      - id: myOrdersList|PICKEDUP|IssueWithRideroRRestaurant
+        type: link
+        meta:
+          conditions: order.delivery_type = vendor_delivery
+        text: {{ tgo_issue_with_rider_link }}
+        destination: check_order_status.202
+  - id: complain_about_late_order.240
+    title: {{ order_status_link }}
+    blocks:
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime
+        type: blockGroup
+        event_id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime
+        deflection_id: 1A.1
+        blocks:
+          - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime|content
+            type: richContent
+            text: {{ whereIsMyOrder_OD_PICKEDUP_notExceedPromiseTime_Content }}
+  - id: complain_about_late_order.245
+    title: {{ order_status_link }}
+    blocks:
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|onlyDelay|content
+        type: richContent
+        text: {{ whereIsMyOrder_OD_PICKEDUP_exceededPromiseTime_Content }}
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|onlyDelay|chat
+        type: form
+        submit_text: {{ Chat }}
+        action: chat
+        constants:
+          reason_code: 1A.12
+  - id: complain_about_late_order.246
+    title: {{ reason_for_cancelling_waiting_time_is_too_long }}
+    meta:
+      before_display:
+        namespace: reactiveCompEvaluate
+        endpoint:
+          url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/evaluate
+          method: POST
+          request_body_casing: snake
+          has_default_helpcenter_headers: true
+          body:
+            order_id: << order.orderId >>
+            reason_code: 1A.13
+            transaction_id: << order.transactionId >>
+            helpcenter_session_id: << analytics.sessionId >>
+            local_contact_reason: 274
+    blocks:
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|1620|content
+        type: richContent
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+        text: {{ can_issue_voucher_content_in_delivery_face }}
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|1620|voucherClaimed|content
+        type: richContent
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = voucher_already_created
+        text: {{ content_for_voucher_claimed }}
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|1620|noRecommendation|content
+        type: richContent
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = no_recommendation
+        text: {{ content_for_voucher_claimed_with_chat }}
+      - id: whereIsOrder|moderateDelay|reactiveComp|compensation|form
+        type: formV2
+        deflection_id: 1A.13
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+        namespace: reactiveCompApply
+        submit_button_text: Claim <<$reactiveCompEvaluate.response.body.payload.recommendation_value>> <<order.currency>> voucher
+        constants:
+          reason_code: 1A.13
+        on_submit:
+          - id: reactiveCompApplyRequest
+            type: request
+            endpoint:
+              url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/apply
+              method: POST
+              has_default_helpcenter_headers: true
+              request_body_casing: snake
+              body:
+                key: <<$reactiveCompEvaluate.response.body.payload.id>>
+                order_id: <<order.orderId>>
+                choice: voucher
+                local_contact_reason: 274
+            next_step_id: reactiveCompApplyResponse
+          - id: reactiveCompApplyResponse
+            type: decision
+            branches:
+              - conditions: $reactiveCompApply.steps.reactiveCompApplyRequest.response.body.type = voucher_created
+                next_step_id: navigateToVoucherCreatedPage
+              - next_step_id: navigateToChatPage
+          - id: navigateToVoucherCreatedPage
+            type: navigation
+            destination: page.navigateToVoucherCreatedPage
+          - id: navigateToChatPage
+            type: navigation
+            destination: page.navigateToChatPageReactiveCompensation
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|1620|chat
+        type: form
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type != voucher_already_created
+        submit_text: {{ Chat }}
+        action: chat
+        constants:
+          reason_code: 1A.13
+  - id: complain_about_late_order.247
+    title: {{ reason_for_cancelling_waiting_time_is_too_long }}
+    meta:
+      before_display:
+        namespace: reactiveCompEvaluate
+        endpoint:
+          url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/evaluate
+          method: POST
+          request_body_casing: snake
+          has_default_helpcenter_headers: true
+          body:
+            order_id: << order.orderId >>
+            reason_code: 1A.14
+            transaction_id: << order.transactionId >>
+            helpcenter_session_id: << analytics.sessionId >>
+            local_contact_reason: 275
+    blocks:
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|2130|content
+        type: richContent
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+        text: {{ can_issue_voucher_content_in_delivery_face }}
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|2130|voucherClaimed|content
+        type: richContent
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = voucher_already_created
+        text: {{ content_for_voucher_claimed }}
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|2130|noRecommendation|content
+        type: richContent
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = no_recommendation
+        text: {{ content_for_voucher_claimed_with_chat }}
+      - id: whereIsOrder|severeDelay|reactiveComp|compensation|form
+        type: formV2
+        deflection_id: 1A.14
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+        namespace: reactiveCompApply
+        submit_button_text: Claim <<$reactiveCompEvaluate.response.body.payload.recommendation_value>> <<order.currency>> voucher
+        constants:
+          reason_code: 1A.14
+        on_submit:
+          - id: reactiveCompApplyRequest
+            type: request
+            endpoint:
+              url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/apply
+              method: POST
+              has_default_helpcenter_headers: true
+              request_body_casing: snake
+              body:
+                key: <<$reactiveCompEvaluate.response.body.payload.id>>
+                order_id: <<order.orderId>>
+                choice: voucher
+                local_contact_reason: 275
+            next_step_id: reactiveCompApplyResponse
+          - id: reactiveCompApplyResponse
+            type: decision
+            branches:
+              - conditions: $reactiveCompApply.steps.reactiveCompApplyRequest.response.body.type = voucher_created
+                next_step_id: navigateToVoucherCreatedPage
+              - next_step_id: navigateToChatPage
+          - id: navigateToVoucherCreatedPage
+            type: navigation
+            destination: page.navigateToVoucherCreatedPage
+          - id: navigateToChatPage
+            type: navigation
+            destination: page.navigateToChatPageReactiveCompensation
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|2130|chat
+        type: form
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type != voucher_already_created
+        submit_text: {{ Chat }}
+        action: chat
+        constants:
+          reason_code: 1A.14
+  - id: complain_about_late_order.248
+    title: {{ reason_for_cancelling_waiting_time_is_too_long }}
+    meta:
+      before_display:
+        namespace: reactiveCompEvaluate
+        endpoint:
+          url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/evaluate
+          method: POST
+          request_body_casing: snake
+          has_default_helpcenter_headers: true
+          body:
+            order_id: << order.orderId >>
+            reason_code: 1A.15
+            transaction_id: << order.transactionId >>
+            helpcenter_session_id: << analytics.sessionId >>
+            local_contact_reason: 276
+    blocks:
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|31100|content
+        type: richContent
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+        text: {{ can_issue_voucher_content_in_delivery_face }}
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|31100|voucherClaimed|content
+        type: richContent
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type != reactive_compensation_recommendation
+        text: {{ content_for_voucher_claimed_with_chat }}
+      - id: whereIsOrder|extremeDelay|reactiveComp|compensation|form
+        type: formV2
+        deflection_id: 1A.15
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+        namespace: reactiveCompApply
+        submit_button_text: Claim <<$reactiveCompEvaluate.response.body.payload.recommendation_value>> <<order.currency>> voucher
+        constants:
+          reason_code: 1A.15
+        on_submit:
+          - id: reactiveCompApplyRequest
+            type: request
+            endpoint:
+              url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/apply
+              method: POST
+              has_default_helpcenter_headers: true
+              request_body_casing: snake
+              body:
+                key: <<$reactiveCompEvaluate.response.body.payload.id>>
+                order_id: <<order.orderId>>
+                choice: voucher
+                local_contact_reason: 276
+            next_step_id: reactiveCompApplyResponse
+          - id: reactiveCompApplyResponse
+            type: decision
+            branches:
+              - conditions: $reactiveCompApply.steps.reactiveCompApplyRequest.response.body.type = voucher_created
+                next_step_id: navigateToVoucherCreatedPage
+              - next_step_id: navigateToChatPage
+          - id: navigateToVoucherCreatedPage
+            type: navigation
+            destination: page.navigateToVoucherCreatedPage
+          - id: navigateToChatPage
+            type: navigation
+            destination: page.navigateToChatPageReactiveCompensation
+      - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|31100|chat
+        type: form
+        submit_text: {{ Chat }}
+        action: chat
+        constants:
+          reason_code: 1A.15
+  - id: order_never_arrived.1
+    title: {{ my_order_never_arrived }}
+    blocks:
+      - id: myOrdersList|OD|Delivered|myOrderNeverArrived|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|OD|Delivered|myOrderNeverArrived
+        deflection_id: 2B.2
+        blocks:
+          - id: myOrdersList|OD|Delivered|myOrderNeverArrived|content
+            type: richContent
+            text: {{ myOrdersList_OD_Delivered_myOrderNeverArrived_content }}
+          - id: myOrdersList|OD|Delivered|myOrderNeverArrived|form
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 2B.2
+  - id: order_never_arrived.2
+    title: {{ my_order_never_arrived }}
+    blocks:
+      - id: myOrdersList|VD|Delivered|myOrderNeverArrived|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|VD|Delivered|myOrderNeverArrived
+        deflection_id: 2B.2
+        blocks:
+          - id: myOrdersList|VD|Delivered|myOrderNeverArrived|content
+            type: richContent
+            text: {{ myOrdersList_VD_Delivered_myOrderNeverArrived_content }}
+          - id: myOrdersList|VD|Delivered|myOrderNeverArrived|vendorPhoneLink
+            type: vendorPhoneLink
+            action: vendorPhoneAction
+          - id: myOrdersList|VD|Delivered|myOrderNeverArrived|form
+            type: form
+            action: chat
+            submit_text: {{ Chat }}
+            constants:
+              reason_code: 2B.2
+  - id: page.1
+    title: {{ Items_are_missing_incorrect }}
+    blocks:
+      - id: myOrdersList|Delivered|MissingIncorrectItems|MissingItems
+        type: link
+        text: {{ Report_missing_items }}
+        destination: wrong_missing_item.1
+      - id: myOrdersList|Delivered|MissingIncorrectItems|IncorrectItems
+        type: link
+        text: {{ Report_incorrect_items }}
+        destination: wrong_missing_item.2
+  - id: wrong_order_never_arrived.1
+    title: {{ my_whole_order_is_wrong }}
+    blocks:
+      - id: myOrdersList|Delivered|WrongOrder|RequestRefund
+        type: link
+        text: {{ Request_refund }}
+        destination: wrong_order.1
+  - id: page.2
+    title: {{ rider_issues_label }}
+    blocks:
+      - id: myOrdersList|Delivered|RiderIssue|commonIssues
+        type: link
+        event_id: myOrdersList|Delivered|RiderIssue
+        text: {{ rider_issue }}
+        destination: rider_issue.riderissuelist_subject
+      - id: myOrdersList|Delivered|RiderIssue|iamAtRisk
+        type: link
+        text: {{ I_am_at_risk }}
+        destination: inappropriate_behaviour.1
+  - id: page.3
+    title: {{ qualiy_issue }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund
+        type: link
+        text: {{ Request_refund }}
+        destination: page.4
+  - id: refund_query.1
+    title: {{ where_is_my_refund }}
+    blocks:
+      - id: myOrdersList|CANCELLED|WhereIsMyRefund|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|CANCELLED|WhereIsMyRefund
+        deflection_id: 2F.4
+        blocks:
+          - id: myOrdersList|CANCELLED|WhereIsMyRefund|content
+            type: richContent
+            text: {{ where_is_my_refund_content }}
+          - id: myOrdersList|CANCELLED|WhereIsMyRefund|Form|Chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 2F.4
+  - id: wrong_missing_item.1
+    title: {{ Report_missing_items }}
+    blocks:
+      - id: myOrdersList|Delivered|MissingIncorrectItems|MissingItems|RequestRefund
+        type: link
+        text: {{ Request_refund }}
+        destination: missing_item.1
+  - id: wrong_missing_item.2
+    title: {{ Report_incorrect_items }}
+    blocks:
+      - id: myOrdersList|Delivered|MissingIncorrectItems|IncorrectItems|RequestRefund
+        type: link
+        text: {{ Request_refund }}
+        destination: wrong_item.1
+  - id: wrong_order.1
+    title: {{ Request_refund }}
+    blocks:
+      - id: myOrdersList|Delivered|WrongOrder|RequestRefund|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|WrongOrder|RequestRefund
+        deflection_id: 2B.1
+        blocks:
+          - id: myOrdersList|Delivered|WrongOrder|RequestRefund|content
+            type: richContent
+            text: {{ my_whole_order_is_wrong_content }}
+          - id: myOrdersList|Delivered|WrongOrder|RequestRefund|form
+            type: form
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2B.1
+            fields:
+              - id: myOrdersList|Delivered|WrongOrder|RequestRefund|ImageUploader
+                type: multiImageUploader
+                label: {{ my_whole_order_is_wrong_ImageUploader }}
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|WrongOrder|RequestRefund|textArea
+                type: textArea
+                label: {{ my_whole_order_is_wrong_textArea }}
+                is_required: false
+                placeholder: {{ my_whole_order_is_wrong_textArea_placeholder }}
+                data_key: textArea
+  - id: rider_issue.riderissuelist_subject
+    title: {{ rider_issue }}
+    blocks:
+      - id: myOrdersList|Delivered|RiderIssue|commonIssues|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|RiderIssue
+        deflection_id: 2E
+        blocks:
+          - id: myOrdersList|Delivered|RiderIssue|content
+            type: richContent
+            text: {{ rider_issue_content }}
+      - id: myOrdersList|Delivered|RiderIssue|riderIssueForm
+        type: form
+        submit_text: {{ form_submit }}
+        action: salesforceCase
+        constants:
+          reason_code: 2E
+          subject: riderIssueList_Subject
+        fields:
+          - id: myOrdersList|Delivered|RiderIssue|riderIssueForm|riderIssueList
+            type: singleSelect
+            data_key: reason_code
+            is_required: true
+            label: {{ label_riderIssueList_choices }}
+            choices:
+              - value: 2E.1
+                text: {{ inappropriate_behaviour }}
+              - value: 2E.2
+                text: {{ missing_equipment_or_uniform }}
+              - value: 2E.3
+                text: {{ order_not_delivered_to_doorstep }}
+              - value: 2E.4
+                text: {{ money_collection_issue }}
+              - value: 2E.5
+                text: {{ delivery_instructions_not_followed }}
+              - value: 2G.1
+                text: {{ rider_was_not_compliant_with_contactless_rules }}
+              - value: 2G.2
+                text: {{ other_issues_related_to_contactless_delivery }}
+          - id: myOrdersList|Delivered|RiderIssue|textArea
+            type: textArea
+            label: {{ rider_issue_textArea }}
+            is_required: false
+            placeholder: {{ rider_issue_textArea_placeholder }}
+            data_key: textArea
+  - id: inappropriate_behaviour.1
+    title: {{ I_am_at_risk }}
+    blocks:
+      - id: myOrdersList|Delivered|RiderIssue|iamAtRisk|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|RiderIssue|iamAtRisk
+        deflection_id: 2E.1
+        blocks:
+          - id: myOrdersList|Delivered|RiderIssue|iamAtRisk|content
+            type: richContent
+            text: {{ I_am_at_risk_content }}
+          - id: myOrdersList|Delivered|RiderIssue|iamAtRisk|Form|Chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 2E.1
+  - id: page.4
+    title: {{ Request_refund }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled
+        type: link
+        text: {{ my_food_was_spilled }}
+        destination: spilled_food.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality
+        type: link
+        text: {{ the_food_quality_was_poor }}
+        destination: food_quality.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed
+        type: link
+        text: {{ the_cooking_instructions_were_not_followed }}
+        destination: cooking_instructions_were_not_followed.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion
+        type: link
+        text: {{ the_food_portion_was_small }}
+        destination: food_portion.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood
+        type: link
+        text: {{ the_food_arrived_cold }}
+        destination: food_temperature.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning
+        type: link
+        text: {{ got_food_poisoning }}
+        destination: food_poisoning.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem
+        type: link
+        text: {{ was_allergic_to_an_item_in_the_order }}
+        destination: food_allergens_complain.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood
+        type: link
+        text: {{ there_was_a_foreign_object_in_my_food }}
+        destination: foreign_object.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem
+        type: link
+        text: {{ item_was_expired }}
+        destination: expired_item.1
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem
+        type: link
+        text: {{ item_was_damaged }}
+        destination: damaged_item.1
+  - id: missing_item.1
+    title: {{ Request_refund }}
+    blocks:
+      - id: myOrdersList|Delivered|MissingIncorrectItems|MissingItems|WithinTimeLimit|RequestRefund|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|MissingIncorrectItems|MissingItems|RequestRefund
+        deflection_id: 2A.1
+        blocks:
+          - id: myOrdersList|Delivered|MissingItems|RequestRefund|form
+            type: form
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            meta:
+              conditions: order.delivered_time < 1440
+            constants:
+              reason_code: 2A.1
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|MissingItems|RequestRefund|QuantitySelector
+                type: itemQuantitySelector
+                label: {{ myOrdersList_Delivered_MissingItems_itemQuantitySelector }}
+                data_key: items
+              - id: myOrdersList|Delivered|MissingItems|RequestRefund|textArea
+                type: textInput
+                label: {{ MissingItems_IncorrectItems_textArea }}
+                is_required: true
+                placeholder: {{ missing_IncorrectItems_textArea_placeholder }}
+                data_key: description
+              - id: myOrdersList|Delivered|MissingItems|RequestRefund|form|SelectLocalReasons
+                type: singleSelect
+                data_key: local_contact_reason
+                label: {{ Was_the_bag_sealed_when_your_order_arrived }}
+                is_required: true
+                choices:
+                  - value: SEALED
+                    text: {{ Was_the_bag_sealed_Yes }}
+                  - value: SEAL_BROKEN
+                    text: {{ Was_the_bag_sealed_Yes_but_broken }}
+                  - value: NOT_SEALED
+                    text: {{ Was_the_bag_sealed_No }}
+      - id: myOrdersList|Delivered|MissingIncorrectItems|MissingItems|ExceededTimeLimit|RequestRefund|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|MissingIncorrectItems|MissingItems|RequestRefund
+        deflection_id: 2A.1
+        blocks:
+          - id: myOrdersList|Delivered|MissingItems|RequestRefund|form|1
+            type: form
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            meta:
+              conditions: order.delivered_time >= 1440
+            constants:
+              reason_code: 2A.1
+            fields:
+              - id: myOrdersList|Delivered|MissingItems|RequestRefund|QuantitySelector
+                type: itemQuantitySelector
+                label: {{ myOrdersList_Delivered_MissingItems_itemQuantitySelector }}
+                data_key: items
+              - id: myOrdersList|Delivered|MissingItems|RequestRefund|textArea
+                type: textArea
+                label: {{ MissingItems_IncorrectItems_textArea }}
+                is_required: true
+                placeholder: {{ missing_IncorrectItems_textArea_placeholder }}
+                data_key: textArea
+              - id: myOrdersList|Delivered|MissingItems|RequestRefund|form|SelectLocalReasons
+                type: singleSelect
+                data_key: local_contact_reason
+                label: {{ Was_the_bag_sealed_when_your_order_arrived }}
+                is_required: true
+                choices:
+                  - value: SEALED
+                    text: {{ Was_the_bag_sealed_Yes }}
+                  - value: SEAL_BROKEN
+                    text: {{ Was_the_bag_sealed_Yes_but_broken }}
+                  - value: NOT_SEALED
+                    text: {{ Was_the_bag_sealed_No }}
+  - id: wrong_item.1
+    title: {{ Request_refund }}
+    blocks:
+      - id: myOrdersList|Delivered|MissingIncorrectItems|IncorrectItems|WithinTimeLimit|RequestRefund|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|MissingIncorrectItems|IncorrectItems|RequestRefund
+        deflection_id: 2A.2
+        blocks:
+          - id: myOrdersList|Delivered|IncorrectItems|RequestRefund|form
+            type: form
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            meta:
+              conditions: order.delivered_time < 1440
+            constants:
+              reason_code: 2A.2
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|IncorrectItems|RequestRefund|QuantitySelector
+                type: itemQuantitySelector
+                label: {{ myOrdersList_Delivered_IncorrectItems_itemQuantitySelector }}
+                data_key: items
+              - id: myOrdersList|Delivered|IncorrectItems|RequestRefund|ImageUploader
+                type: imageUploader
+                label: {{ myOrdersList_Delivered_IncorrectItems_ImageUploader }}
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|IncorrectItems|RequestRefund|textArea
+                type: textInput
+                label: {{ MissingItems_IncorrectItems_textArea }}
+                is_required: true
+                placeholder: {{ missing_IncorrectItems_textArea_placeholder }}
+                data_key: description
+      - id: myOrdersList|Delivered|MissingIncorrectItems|IncorrectItems|ExceededTimeLimit|RequestRefund|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|MissingIncorrectItems|IncorrectItems|RequestRefund
+        deflection_id: 2A.2
+        blocks:
+          - id: myOrdersList|Delivered|IncorrectItems|RequestRefund|form|1
+            type: form
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            meta:
+              conditions: order.delivered_time >= 1440
+            constants:
+              reason_code: 2A.2
+            fields:
+              - id: myOrdersList|Delivered|IncorrectItems|RequestRefund|QuantitySelector
+                type: itemQuantitySelector
+                label: {{ myOrdersList_Delivered_IncorrectItems_itemQuantitySelector }}
+                data_key: items
+              - id: myOrdersList|Delivered|IncorrectItems|RequestRefund|ImageUploader
+                type: imageUploader
+                label: {{ myOrdersList_Delivered_IncorrectItems_ImageUploader }}
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|IncorrectItems|RequestRefund|textArea
+                type: textArea
+                label: {{ MissingItems_IncorrectItems_textArea }}
+                is_required: true
+                placeholder: {{ missing_IncorrectItems_textArea_placeholder }}
+                data_key: textArea
+  - id: spilled_food.1
+    title: {{ my_food_was_spilled }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled
+        deflection_id: 2C.1
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2C.1
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2C.1
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodSpilled|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: food_quality.1
+    title: {{ the_food_quality_was_poor }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality
+        deflection_id: 2C.2
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2C.2
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2C.2
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|PoorQuality|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: cooking_instructions_were_not_followed.1
+    title: {{ the_cooking_instructions_were_not_followed }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed
+        deflection_id: 2C.3
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2C.3
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2C.3
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|CookingInstructionsWereNotFollowed|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: food_portion.1
+    title: {{ the_food_portion_was_small }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion
+        deflection_id: 2C.4
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2C.4
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2C.4
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|SmallFoodPortion|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: food_temperature.1
+    title: {{ the_food_arrived_cold }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood
+        deflection_id: 2C.5
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2C.5
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2C.5
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ColdFood|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: food_poisoning.1
+    title: {{ got_food_poisoning }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning
+        deflection_id: 2C.6
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2C.6
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2C.6
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|FoodPoisoning|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: food_allergens_complain.1
+    title: {{ was_allergic_to_an_item_in_the_order }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem
+        deflection_id: 2C.7
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2C.7
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2C.7
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|AllergicToAnItem|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: foreign_object.1
+    title: {{ there_was_a_foreign_object_in_my_food }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood
+        deflection_id: 2C.8
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2C.8
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2C.8
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ForeignObjectInFood|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: expired_item.1
+    title: {{ item_was_expired }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem
+        deflection_id: 2H.1
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2H.1
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2H.1
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|ExpiredItem|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: damaged_item.1
+    title: {{ item_was_damaged }}
+    blocks:
+      - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|blockGroup
+        type: blockGroup
+        event_id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem
+        deflection_id: 2H.2
+        blocks:
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|content
+            type: richContent
+            text: {{ food_quality_issue_content }}
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|WithinTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time < 1440
+            submit_text: {{ form_submit }}
+            action: autoPartialRefund
+            constants:
+              reason_code: 2H.2
+              refund_method: automatic
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+          - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|PoorQuality|ExceededTimeLimit|form
+            type: form
+            meta:
+              conditions: order.delivered_time >= 1440
+            submit_text: {{ form_submit }}
+            action: salesforceCase
+            constants:
+              reason_code: 2H.2
+            fields:
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|QuantitySelector
+                type: itemQuantitySelector
+                label: Select items
+                data_key: items
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|ImageUploader
+                type: imageUploader
+                is_required: true
+                data_key: image_url
+              - id: myOrdersList|Delivered|QualityIssue|FoodQualityIssue|RequestRefund|DamagedItem|textArea
+                type: textArea
+                label: {{ autoPartialRefund_cases_textArea }}
+                is_required: true
+                placeholder: {{ food_quality_issue_textArea_placeholder }}
+                data_key: textArea
+  - id: customer_account.1
+    title: {{ tPro_Subscription }}
+    blocks:
+      - id: tproSubscription|blockGroup
+        type: blockGroup
+        event_id: tproSubscription
+        blocks:
+          - id: tproSubscription|WhatIsTalabatPro
+            type: link
+            text: {{ What_is_talabat_Pro }}
+            destination: subscription_premium_service_issue.1
+          - id: tproSubscription|HowDoISubscribeToTalabatPro
+            type: link
+            text: {{ How_do_I_subscribe_to_talabat_Pro }}
+            destination: subscription_premium_service_issue.2
+          - id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro
+            type: link
+            text: {{ How_do_I_identify_which_restaurants_are_part_of_talabat_Pro }}
+            destination: subscription_premium_service_issue.3
+          - id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro
+            type: link
+            text: {{ What_conditions_should_I_meet_to_benefit_from_talabat_Pro }}
+            destination: subscription_premium_service_issue.4
+          - id: tproSubscription|HowDoICancelMyTalabatProMembership
+            type: link
+            text: {{ How_do_I_cancel_my_talabat_Pro_membership }}
+            destination: subscription_premium_service_issue.7
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembership
+            type: link
+            text: {{ How_do_I_renew_my_talabat_Pro_membership }}
+            destination: subscription_premium_service_issue.5
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits
+            type: link
+            text: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+            destination: subscription_premium_service_issue.6
+          - id: tproSubscription|WhyHaveIBeenChargedAServiceFee
+            type: link
+            text: {{ tProWhyHaveIBeenChargedAServiceFee }}
+            destination: subscription_premium_service_issue.9
+  - id: subscription_premium_service_issue.1
+    title: {{ What_is_talabat_Pro }}
+    blocks:
+      - id: tproSubscription|WhatIsTalabatPro|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|WhatIsTalabatPro
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|WhatIsTalabatPro|content
+            type: richContent
+            text: {{ tproSubscription_WhatIsTalabatPro_content }}
+  - id: subscription_premium_service_issue.2
+    title: {{ How_do_I_subscribe_to_talabat_Pro }}
+    blocks:
+      - id: tproSubscription|HowDoISubscribeToTalabatPro|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|HowDoISubscribeToTalabatPro
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|HowDoISubscribeToTalabatPro|content
+            type: richContent
+            text: {{ tproSubscription_HowDoISubscribeToTalabatPro_content }}
+  - id: subscription_premium_service_issue.3
+    title: {{ How_do_I_identify_which_restaurants_are_part_of_talabat_Pro }}
+    blocks:
+      - id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro|content
+            type: richContent
+            text: {{ tproSubscription_HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro_content }}
+  - id: subscription_premium_service_issue.4
+    title: {{ What_conditions_should_I_meet_to_benefit_from_talabat_Pro }}
+    blocks:
+      - id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro|content
+            type: richContent
+            text: {{ tproSubscription_WhatConditionsShouldIMeetToBenefitFromTalabatPro_content }}
+  - id: subscription_premium_service_issue.5
+    title: {{ How_do_I_renew_my_talabat_Pro_membership }}
+    blocks:
+      - id: tproSubscription|HowDoIRenewMyTalabatProMembership|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|HowDoIRenewMyTalabatProMembership
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembership|content
+            type: richContent
+            text: {{ tproSubscription_HowDoIRenewMyTalabatProMembership_content }}
+          - id: tproSubscription|HowDoIRenewMyTalabatProMembership|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 3D.8
+  - id: subscription_premium_service_issue.6
+    title: {{ I_am_facing_an_issue_with_my_talabat_Pro_benefits }}
+    blocks:
+      - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits|content
+            type: richContent
+            text: {{ tproSubscription_IAmFacingAnIssueWithMyTalabatProBenefits_content }}
+          - id: tproSubscription|IAmFacingAnIssueWithMyTalabatProBenefits|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 3D.8
+  - id: subscription_premium_service_issue.7
+    title: {{ How_do_I_cancel_my_talabat_Pro_membership }}
+    blocks:
+      - id: tproSubscription|HowDoICancelMyTalabatProMembership|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|HowDoICancelMyTalabatProMembership
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|HowDoICancelMyTalabatProMembership|content
+            type: richContent
+            text: {{ tproSubscription_HowDoICancelMyTalabatProMembership_content }}
+          - id: tproSubscription|HowDoICancelMyTalabatProMembership|chat
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 3D.8
+  - id: subscription_premium_service_issue.9
+    title: {{ tProWhyHaveIBeenChargedAServiceFee }}
+    blocks:
+      - id: tproSubscription|WhyHaveIBeenChargedAServiceFee|contentBlock
+        type: blockGroup
+        event_id: tproSubscription|WhyHaveIBeenChargedAServiceFee
+        deflection_id: 3D.8
+        blocks:
+          - id: tproSubscription|WhyHaveIBeenChargedAServiceFee|content
+            type: richContent
+            text: {{ tproSubscription_WhyHaveIBeenChargedAServiceFee_content }}
+  - id: cancellation.cancel_accepted_order_refund_false
+    title: {{ request_cancel_order }}
+    meta:
+      before_display:
+        namespace: reactiveCompEvaluate
+        endpoint:
+          url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/evaluate
+          method: POST
+          request_body_casing: snake
+          has_default_helpcenter_headers: true
+          body:
+            order_id: << order.orderId >>
+            reason_code: 1C.5
+            transaction_id: << order.transactionId >>
+            helpcenter_session_id: << analytics.sessionId >>
+    blocks:
+      - id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted|1
+        type: blockGroup
+        event_id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted
+        deflection_id: 1C
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type = voucher_already_created
+        blocks:
+          - id: orders|ordersList|orderDetail|OD|cancelMyOrder|voucherClaimed|text
+            type: richContent
+            text: {{ reactive_compensation_voucher_issued }}
+          - id: orders|ordersList|orderDetail|OD|cancelMyOrder|voucherClaimed|textcloseButton
+            type: button
+            destination: mainMenu
+            text: {{ addr_modification_close_help_center }}
+            variant: primary
+      - id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted|2
+        type: blockGroup
+        event_id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted
+        meta:
+          conditions: $reactiveCompEvaluate.response.body.type IN [reactive_compensation_recommendation, no_recommendation]
+        blocks:
+          - id: orders|ordersList|orderDetail|OD|cancelMyOrder|Accepted|text
+            meta:
+              conditions: order.status IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED]
+            type: richContent
+            text: {{ post_acceptance_cancellation_content }}
+          - id: orders|ordersList|orderDetail|OD|cancelMyOrder|Delivering|text
+            meta:
+              conditions: order.status NOT IN [ACCEPTED, COURIER_NEAR_PICK_UP, ORDER_PREPARED]
+            type: richContent
+            text: {{ post_delivering_cancellation_content }}
+          - id: autoCancellation|selectReason|form
+            type: formV2
+            namespace: autocancellationSelectionReason
+            submit_button_text: {{ Cancel_Order }}
+            fields:
+              - id: autoCancellation|selectReason|choiceGroup
+                type: choiceGroup
+                data_key: autoCancellationReasonCode
+                label: Select reason
+                is_required: true
+                blocks:
+                  - id: autoCancellation|selectReason|radio|1
+                    type: radio
+                    meta:
+                      conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+                    value: REACTIVE_COMPENSATION_PVA
+                    text: {{ reason_for_cancelling_waiting_time_is_too_long }}
+                  - id: autoCancellation|selectReason|radio|4
+                    type: radio
+                    meta:
+                      conditions: $reactiveCompEvaluate.response.body.type = no_recommendation
+                    value: REACTIVE_COMPENSATION_PVA
+                    text: {{ reason_for_cancelling_waiting_time_is_too_long }}
+                  - id: autoCancellation|selectReason|radio|2
+                    type: radio
+                    value: LATE_DELIVERY
+                    text: {{ tgo_issue_with_rest_link }}
+                  - id: autoCancellation|selectReason|radio|3
+                    type: radio
+                    value: LATE_DELIVERY
+                    text: {{ tgo_issue_with_rider_link }}
+            on_submit:
+              - id: autoCancellationRequestDecision
+                type: decision
+                branches:
+                  - conditions: $autocancellationSelectionReason.fieldValues.autoCancellationReasonCode = REACTIVE_COMPENSATION_PVA
+                    next_step_id: myOrderReactiveCompDelay
+                  - next_step_id: autoCancellationRequest
+              - id: autoCancellationRequest
+                type: request
+                action:
+                  type: autoCancellation
+                  params:
+                    is_refundable: false
+                    order_id: << order.orderId >>
+                    platform_code: LATE_DELIVERY
+                next_step_id: autoCancellationDecision
+              - id: autoCancellationDecision
+                type: decision
+                branches:
+                  - conditions: $autocancellationSelectionReason.steps.autoCancellationRequest.response.status = 200 AND $autocancellationSelectionReason.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                    next_step_id: navigateToOrderCancelledPage
+                  - next_step_id: navigateToChatPage
+              - id: navigateToOrderCancelledPage
+                type: navigation
+                destination: page.navigateToOrderCancelledPage
+              - id: navigateToChatPage
+                type: navigation
+                destination: page.cancelDelayedOrderPostVA
+              - id: myOrderReactiveCompDelay
+                type: navigation
+                destination: page.myOrderReactiveCompDelay
+  - id: page.myOrderReactiveCompDelay
+    title: {{ reason_for_cancelling_waiting_time_is_too_long }}
+    meta:
+      before_display:
+        namespace: reactiveCompEvaluate
+        endpoint:
+          url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/evaluate
+          method: POST
+          request_body_casing: snake
+          has_default_helpcenter_headers: true
+          body:
+            order_id: << order.orderId >>
+            reason_code: 1C.5
+            transaction_id: << order.transactionId >>
+            helpcenter_session_id: << analytics.sessionId >>
+    blocks:
+      - id: whereIsOrder|delay|reactiveComp|applyReq|evaluate
+        deflection_id: 1A.13
+        type: blockGroup
+        blocks:
+          - id: whereIsOrder|delay|reactiveComp|applyReq|text
+            type: richContent
+            text: {{ can_issue_voucher_content_in_delivery_face }}
+          - id: whereIsOrder|moderateDelay|reactiveComp|compensation|form
+            type: formV2
+            meta:
+              conditions: $reactiveCompEvaluate.response.body.type = reactive_compensation_recommendation
+            namespace: reactiveCompApply
+            submit_button_text: Claim <<$reactiveCompEvaluate.response.body.payload.recommendation_value>> <<order.currency>> voucher
+            constants:
+              reason_code: 2C.4
+            on_submit:
+              - id: reactiveCompApplyRequest
+                type: request
+                endpoint:
+                  url: https://helpcenter-eu.usehurrier.com/automations/v2/reactive-compensation/apply
+                  method: POST
+                  has_default_helpcenter_headers: true
+                  request_body_casing: snake
+                  body:
+                    key: <<$reactiveCompEvaluate.response.body.payload.id>>
+                    order_id: <<order.orderId>>
+                    choice: voucher
+                next_step_id: reactiveCompApplyResponse
+              - id: reactiveCompApplyResponse
+                type: decision
+                branches:
+                  - conditions: $reactiveCompApply.steps.reactiveCompApplyRequest.response.body.type = voucher_created
+                    next_step_id: navigateToVoucherCreatedPage
+                  - next_step_id: navigateToChatPage
+              - id: navigateToVoucherCreatedPage
+                type: navigation
+                destination: page.navigateToVoucherCreatedPage
+              - id: navigateToChatPage
+                type: navigation
+                destination: page.navigateToChatPageReactiveCompensation
+          - id: myOrdersList|cancelMyOrder|ExceededPromisedTime|WaitingTimeIssue|cancelReasonsFrom
+            type: form
+            submit_text: {{ Cancel_Order }}
+            action: autoCancellation
+            constants:
+              subject: Cancel order
+              platform_code: LATE_DELIVERY
+              reason_code: 1C.5
+  - id: page.navigateToChatPageReactiveCompensation
+    title: {{ voucher_issue_fail }}
+    blocks:
+      - id: reactiveCompensationResult|fail
+        type: result
+        result_type: ERROR
+        title: {{ voucher_issue_fail }}
+  - id: page.navigateToVoucherCreatedPage
+    title: {{ voucher_issue_success }}
+    blocks:
+      - id: reactiveCompensationResult|success
+        type: result
+        result_type: SUCCESS
+        title: {{ voucher_issue_success }}
+        description: {{ voucher_issue_content }}
+# ========= FORMV2 BLOCK WITH REQUEST-->DECISION-->NAVIGATION ON SUBMIT ==========
+  - id: cancellation.autoCancellation
+    title: {{ request_cancel_order }} 
+    blocks:
+      - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
+        type: blockGroup
+        event_id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
+        deflection_id: 1C
+        blocks:
+          - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|text
+            type: richContent
+            text:  {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }}
+          - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|formv2
+            type: formV2
+            namespace: autoCancellationNamespace
+            submit_button_text: {{Cancel_Order}}
+            constants:
+              subject: {{Cancel_Order}}
+            fields:
+              - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|formv2|reason
+                type: singleSelect
+                data_key: autoCancellationReasonCode
+                is_required: true
+                label: {{label_cancelReasons_choices}}
+                choices:
+                  - value: PRE_ACCEPTANCE_VOUCHER_NOT_APPLIED
+                    text: {{reason_for_cancelling_my_voucher_wasnt_applied}}
+                  - value: PRE_ACCEPTANCE_CHANGED_MIND_MISTAKE_ERROR
+                    text: {{reason_for_cancelling_change_payment_method}}
+                  - value: PRE_ACCEPTANCE_CHANGED_MIND_MISTAKE_ERROR
+                    text: {{reason_for_cancelling_forgot_to_add_something}}
+                  - value: PRE_ACCEPTANCE_CHANGED_MIND_MISTAKE_ERROR
+                    text: {{reason_for_cancelling_wrong_address}}
+                  - value: PRE_ACCEPTANCE_DUPLICATE_ORDER
+                    text: {{reason_for_cancelling_placed_order_by_accident}}
+                  - value: PRE_ACCEPTANCE_CHANGED_MIND_NO_REASON
+                    text: {{reason_for_cancelling_changed_my_mind}}
+            on_submit:
+              - id: autoCancellationRequest
+                type: request
+                action:
+                  type: autoCancellation
+                  params:
+                    order_id: << order.orderId >>
+                    platform_code: << $autoCancellationNamespace.fieldValues.autoCancellationReasonCode >>
+                next_step_id: autoCancellationDecision
+      
+              - id: autoCancellationDecision
+                type: decision
+                branches:
+                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.status = 200 AND
+                      $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                    next_step_id: navigateToOrderCancelledPage
+ #default - else if none of the above conditions are met
+                  - next_step_id: navigateToNoFallbackPage
+              - id: navigateToOrderCancelledPage
+                type: navigation
+                destination: cancellation.navigateToOrderCancelledPagePreVa
+ 
+              - id: navigateToNoFallbackPage
+                type: navigation
+                destination: cancellation.navigateToNoFallbackPage 
+
+# ========= RESULT PAGES =========
+  - id: cancellation.navigateToOrderCancelledPagePreVa
+    title: {{request_cancel_order}}
+    blocks:
+      - id: autoCancellationResult|success
+        type: result
+        deflection_id: 1C
+        result_type: SUCCESS
+        title: {{order_canceled_success}} 
+        description: {{order_canceled_content}}
+  
+  - id: cancellation.navigateToNoFallbackPage
+    title: {{request_cancel_order}}
+    blocks:
+      - id: autoCancellationResult|noFallback
+        type: result
+        result_type: ERROR
+        title: {{autocancel_no_fallback}}
+        description: {{autocancel_no_fallback_content}}
+        deflection_id: 1C

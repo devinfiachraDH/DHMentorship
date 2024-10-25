@@ -1358,33 +1358,33 @@ pages:
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus|afterDelay|shortDelay
         type: link
         meta:
-          conditions: order.delivery_type = platform_delivery AND order.original_promised_time > 0 AND order.original_promised_time <= 10
+          conditions: order.delivery_type = platform_delivery AND order.original_promised_time BETWEEN 0:10
         text: {{ order_status_link }}
-        destination: page.orderStatusAcceptedShortDelayedPD
+        destination: complaint_about_short_delay.orderStatusAcceptedShortDelayedPD
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus|afterDelay|moderateDelay
         type: link
         meta:
-          conditions: order.delivery_type = platform_delivery AND order.original_promised_time > 10 AND order.original_promised_time <= 20
+          conditions: order.delivery_type = platform_delivery AND order.original_promised_time BETWEEN 10:20
         text: {{ order_status_link }}
-        destination: page.orderStatusAcceptedModerateDelayedPD
+        destination: complaint_about_moderate_delay.orderStatusAcceptedModerateDelayedPD
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus|afterDelay|severeDelay
         type: link
         meta:
-          conditions: order.delivery_type = platform_delivery AND order.original_promised_time > 20 AND order.original_promised_time <= 30
+          conditions: order.delivery_type = platform_delivery AND order.original_promised_time BETWEEN 20:30
         text: {{ order_status_link }}
-        destination: page.orderStatusAcceptedSevereDelayedPD
+        destination: complaint_about_severe_delay.orderStatusAcceptedSevereDelayedPD
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus|afterDelay|extremeDelay
         type: link
         meta:
           conditions: order.delivery_type = platform_delivery AND order.original_promised_time > 30
         text: {{ order_status_link }}
-        destination: page.orderStatusAcceptedExtremeDelayedPD
+        destination: complaint_about_extreme_delay.orderStatusAcceptedExtremeDelayedPD
       - id: myOrdersList|VD|ACCEPTED|whereIsMyOrder|orderStatus
         type: link
         meta:
           conditions: order.delivery_type = vendor_delivery
         text: {{ order_status_link }}
-        destination: page.orderStatusAcceptedVD
+        destination: check_order_status.orderStatusAcceptedVD
       - id: myOrdersList|ACCEPTED|whereIsMyOrder|IssueWithRestaurant
         type: link
         meta:
@@ -2681,7 +2681,7 @@ pages:
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus|beforeDelay|content
             type: richContent
             text: {{ whereIsMyOrder_OD_ACCEPTED_notExceedPromiseTime_Content }}
-  - id: page.orderStatusAcceptedShortDelayedPD
+  - id: complaint_about_short_delay.orderStatusAcceptedShortDelayedPD
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus|afterDelay|shortDelay|content
@@ -2693,7 +2693,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.12
-  - id: page.orderStatusAcceptedModerateDelayedPD
+  - id: complaint_about_moderate_delay.orderStatusAcceptedModerateDelayedPD
     title: {{ order_status_link }}
     meta:
       before_display:
@@ -2768,7 +2768,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.13
-  - id: page.orderStatusAcceptedSevereDelayedPD
+  - id: complaint_about_severe_delay.orderStatusAcceptedSevereDelayedPD
     title: {{ order_status_link }}
     meta:
       before_display:
@@ -2843,7 +2843,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.14
-  - id: page.orderStatusAcceptedExtremeDelayedPD
+  - id: complaint_about_extreme_delay.orderStatusAcceptedExtremeDelayedPD
     title: {{ order_status_link }}
     meta:
       before_display:
@@ -2911,7 +2911,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.15
-  - id: page.orderStatusAcceptedVD
+  - id: check_order_status.orderStatusAcceptedVD
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|VD|ACCEPTED|whereIsMyOrder|orderStatus

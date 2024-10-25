@@ -35,8 +35,7 @@ pages:
             text: {{ my_support_requests }}
             destination: inbox
             meta:
-              conditions:
-                is_guest_user = False
+              conditions: is_guest_user = False
           - id: tproSubscription
             type: link
             text: {{ tPro_Subscription }}
@@ -117,13 +116,11 @@ pages:
             destination: subscription_premium_service_issue.6
           - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError
             type: link
-            text: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error
-              }}
+            text: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error }}
             destination: reward_program_issue.7
           - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore
             type: link
-            text: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store
-              }}
+            text: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store }}
             destination: reward_program_issue.8
   - id: reward_program_issue.1
     title: {{ What_is_talabat_rewards }}
@@ -181,8 +178,7 @@ pages:
             type: richContent
             text: {{ tRewardsSubscription_WhereCanISeeMyRewardsPointsHistory_content }}
   - id: reward_program_issue.6
-    title: {{ My_order_was_cancelled_or_Not_placed_and_I_lost_my_reward_voucher_without_getting_any_discount
-      }}
+    title: {{ My_order_was_cancelled_or_Not_placed_and_I_lost_my_reward_voucher_without_getting_any_discount }}
     blocks:
       - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|contentBlock
         type: blockGroup
@@ -191,8 +187,7 @@ pages:
         blocks:
           - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|content
             type: richContent
-            text: {{ tRewardsSubscription_MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount_content
-              }}
+            text: {{ tRewardsSubscription_MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount_content }}
           - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|form
             type: form
             submit_text: {{ form_submit }}
@@ -202,21 +197,17 @@ pages:
             fields:
               - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|ImageUploader
                 type: multiImageUploader
-                label: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_label
-                  }}
+                label: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_label }}
                 is_required: true
                 data_key: image_url
               - id: tRewardsSubscription|MyOrderWasCancelledOrNotPlacedAndILostMyRewardVoucherWithoutGettingAnyDiscount|textArea
                 type: textArea
-                label: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_textArea_label
-                  }}
+                label: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_textArea_label }}
                 is_required: false
-                placeholder: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_textArea_placeholder
-                  }}
+                placeholder: {{ My_order_was_cancelled_or_not_placed_and_i_lost_my_reward_voucher_without_getting_any_discount_ImageUploader_textArea_placeholder }}
                 data_key: textArea
   - id: reward_program_issue.7
-    title: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error
-      }}
+    title: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error }}
     blocks:
       - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|contentBlock
         type: blockGroup
@@ -225,8 +216,7 @@ pages:
         blocks:
           - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|content
             type: richContent
-            text: {{ tRewardsSubscription_IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError_content
-              }}
+            text: {{ tRewardsSubscription_IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError_content }}
           - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|form
             type: form
             submit_text: {{ form_submit }}
@@ -236,21 +226,17 @@ pages:
             fields:
               - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|ImageUploader
                 type: multiImageUploader
-                label: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_label
-                  }}
+                label: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_label }}
                 is_required: true
                 data_key: image_url
               - id: tRewardsSubscription|IHaveUsedMytRewardsPointsToRedeemVoucherAndItIsNotAppearingAtCheckOutPageOrGivesAnError|textArea
                 type: textArea
-                label: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_textArea_label
-                  }}
+                label: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_textArea_label }}
                 is_required: false
-                placeholder: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_textArea_placeholder
-                  }}
+                placeholder: {{ I_have_used_my_t_rewards_points_to_redeem_voucher_and_it_is_not_appearing_at_check_out_page_or_gives_an_error_ImageUploader_textArea_placeholder }}
                 data_key: textArea
   - id: reward_program_issue.8
-    title: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store
-      }}
+    title: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store }}
     blocks:
       - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|contentBlock
         type: blockGroup
@@ -259,8 +245,7 @@ pages:
         blocks:
           - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|content
             type: richContent
-            text: {{ tRewardsSubscription_IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore_content
-              }}
+            text: {{ tRewardsSubscription_IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore_content }}
           - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|form
             type: form
             submit_text: {{ form_submit }}
@@ -270,18 +255,15 @@ pages:
             fields:
               - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|ImageUploader
                 type: multiImageUploader
-                label: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_label
-                  }}
+                label: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_label }}
                 is_required: true
                 data_key: image_url
               - id: tRewardsSubscription|IHaveRedeemedLifestyleVoucherButICannotUseItOnThePartnerWebsiteStore|textArea
                 type: textArea
-                label: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_textArea_label
-                  }}
+                label: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_textArea_label }}
                 is_required: false
-                placeholder: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_textArea_placeholder
-                  }}
-                data_key: textArea          
+                placeholder: {{ I_have_redeemed_lifestyle_voucher_but_I_cannot_use_it_on_the_partner_website_store_ImageUploader_textArea_placeholder }}
+                data_key: textArea
   - id: ordersList
     title: {{ my_orders }}
     blocks:
@@ -328,10 +310,7 @@ pages:
         variant: CUSTOMER
         text: {{ where_is_my_order }}
         meta:
-          conditions:
-            order.status IN [PENDING, DISPLAYED_AT_VENDOR, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED,
-            SENT_TO_LOGISTICS, SENDING_TO_VENDOR, TRANSMITTED, WAITING_FOR_VALIDATION] AND
-            order.delivery_type IN [platform_delivery, vendor_delivery]
+          conditions: order.status IN [PENDING, DISPLAYED_AT_VENDOR, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED, SENT_TO_LOGISTICS, SENDING_TO_VENDOR, TRANSMITTED, WAITING_FOR_VALIDATION] AND order.delivery_type IN [platform_delivery, vendor_delivery]
         blocks:
           - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder
             type: link
@@ -343,14 +322,12 @@ pages:
             meta:
               conditions: order.courier.accepted_time > 0 AND order.delivery_type = platform_delivery
             destination: change_delivery_instructions.1
-      # ========= AUTO CANCELLATION PRE VENDOR ACCEPTANCE ==================================================================================================
-      # "Link" block that leads to "formV2-autoCancellation" block      
       - id: orders|ordersList|orderDetail|OD|cancelMyOrder
         type: blockGroup
         event_id: orders|ordersList|orderDetail|OD|cancelMyOrder
         blocks:
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
-            text: {{ request_cancel_order }} #cancel_my_order - { { fill out with the correct text or add Weblate translation key of your choice } }
+            text: {{ request_cancel_order }}
             type: link
             meta:
               conditions: order.status IN [PENDING, TRANSMITTED, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED, SENT_TO_LOGISTICS, SENDING_TO_VENDOR, DISPLAYED_AT_VENDOR] AND order.delivery_type = platform_delivery
@@ -365,7 +342,7 @@ pages:
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder
             type: link
             text: {{ where_is_my_order }}
-            destination: complain_about_late_order.100
+            destination: check_order_status.505
           - id: myOrdersList|OD|ACCEPTED|addDeliveryInstructions
             type: link
             text: {{ add_delivery_instructions }}
@@ -389,7 +366,7 @@ pages:
             text: {{ request_cancel_order }}
             meta:
               conditions: order.delivery_type = platform_delivery AND order.original_promised_time >= 0
-            destination: page.cancelDelayedOrderPostVACompensation           
+            destination: page.cancelDelayedOrderPostVACompensation
           - id: myOrdersList|ACCEPTED|cancelMyOrder|NonPlatformDelivery|ExceededPromisedTime
             type: link
             text: {{ request_cancel_order }}
@@ -401,9 +378,7 @@ pages:
         variant: CUSTOMER
         text: {{ where_is_my_order }}
         meta:
-          conditions:
-            order.delivery_type IN [platform_delivery, vendor_delivery] AND
-            order.status IN [PICKED_UP, COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF]
+          conditions: order.delivery_type IN [platform_delivery, vendor_delivery] AND order.status IN [PICKED_UP, COURIER_LEFT_PICK_UP, COURIER_NEAR_DROP_OFF]
         blocks:
           - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder
             type: link
@@ -438,146 +413,134 @@ pages:
             type: link
             text: {{ my_order_never_arrived }}
             meta:
-              conditions:
-                order.delivery_type = platform_delivery AND
-                order.delivered_time <= 240
-            destination: order_never_arrived.1
+              conditions: order.delivery_type = platform_delivery AND order.delivered_time <= 240
+            destination: order_marked_as_delivered_but_didnt_receive.1
           - id: myOrdersList|VD|Delivered|myOrderNeverArrived
             type: link
             text: {{ my_order_never_arrived }}
             meta:
-              conditions:
-                order.delivery_type = vendor_delivery AND
-                order.accepted_time <= 240
+              conditions: order.delivery_type = vendor_delivery AND order.accepted_time <= 240
             destination: order_never_arrived.2
           - id: myOrdersList|Delivered|Food|BeforeTimeLine
             type: blockGroup
             meta:
-              conditions:
-                order.vertical_type = restaurants AND
-                order.delivered_time < 1440
+              conditions: order.vertical_type = restaurants AND order.delivered_time < 1440
             blocks:
-            - id: myOrdersList|Delivered|Food|BeforeTimeLine|MissingIncorrectItems
-              type: link
-              text: {{ Items_are_missing_incorrect }}
-              destination: page.1
-            - id: myOrdersList|Delivered|Food|BeforeTimeLine|WrongOrder
-              type: link
-              event_id: myOrdersList|Delivered|Food|BeforeTimeLine|WrongOrder
-              text: {{ my_whole_order_is_wrong }}
-              destination: wrong_order_never_arrived.1
-            - id: myOrdersList|Delivered|Food|BeforeTimeLine|QualityIssue
-              type: link
-              event_id: myOrdersList|Delivered|Food|BeforeTimeLine|QualityIssue
-              text: {{ qualiy_issue }}
-              destination: page.3
+              - id: myOrdersList|Delivered|Food|BeforeTimeLine|MissingIncorrectItems
+                type: link
+                text: {{ Items_are_missing_incorrect }}
+                destination: page.1
+              - id: myOrdersList|Delivered|Food|BeforeTimeLine|WrongOrder
+                type: link
+                event_id: myOrdersList|Delivered|Food|BeforeTimeLine|WrongOrder
+                text: {{ my_whole_order_is_wrong }}
+                destination: wrong_order_never_arrived.1
+              - id: myOrdersList|Delivered|Food|BeforeTimeLine|QualityIssue
+                type: link
+                event_id: myOrdersList|Delivered|Food|BeforeTimeLine|QualityIssue
+                text: {{ qualiy_issue }}
+                destination: page.3
           - id: myOrdersList|Delivered|Food|AfterTimeLine
             type: blockGroup
             meta:
-              conditions:
-                order.vertical_type = restaurants AND
-                order.delivered_time >= 1440
+              conditions: order.vertical_type = restaurants AND order.delivered_time >= 1440
             blocks:
-            - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems
-              event_id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems
-              text: {{ Items_are_missing_incorrect }}
-              type: accordion
-              blocks:
-                - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems|Accordion
-                  deflection_id: 1C
-                  type: blockGroup
-                  blocks:
-                    - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems|Accordion|text
-                      type: richContent
-                      text: {{ refund_not_possible_leave_content }}
-            - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder
-              event_id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder
-              text: {{ my_whole_order_is_wrong }}
-              type: accordion
-              blocks:
-                - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder|Accordion
-                  deflection_id: 1C
-                  type: blockGroup
-                  blocks:
-                    - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder|Accordion|text
-                      type: richContent
-                      text: {{ refund_not_possible_leave_content }}
-            - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue
-              event_id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue
-              text: {{ qualiy_issue }}
-              type: accordion
-              blocks:
-                - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue|Accordion
-                  deflection_id: 1C
-                  type: blockGroup
-                  blocks:
-                    - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue|Accordion|text
-                      type: richContent
-                      text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems
+                event_id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems
+                text: {{ Items_are_missing_incorrect }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|Food|AfterTimeLine|MissingIncorrectItems|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder
+                event_id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder
+                text: {{ my_whole_order_is_wrong }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|Food|AfterTimeLine|WrongOrder|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue
+                event_id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue
+                text: {{ qualiy_issue }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|Food|AfterTimeLine|QualityIssue|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
           - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine
             type: blockGroup
             meta:
-              conditions:
-                order.vertical_type NOT IN [restaurants] AND
-                order.delivered_time < 20160
+              conditions: order.vertical_type NOT IN [restaurants] AND order.delivered_time < 20160
             blocks:
-            - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|MissingIncorrectItems
-              type: link
-              text: {{ Items_are_missing_incorrect }}
-              destination: page.1
-            - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|WrongOrder
-              type: link
-              event_id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|WrongOrder
-              text: {{ my_whole_order_is_wrong }}
-              destination: wrong_order_never_arrived.1
-            - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|QualityIssue
-              type: link
-              event_id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|QualityIssue
-              text: {{ qualiy_issue }}
-              destination: page.3
+              - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|MissingIncorrectItems
+                type: link
+                text: {{ Items_are_missing_incorrect }}
+                destination: page.1
+              - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|WrongOrder
+                type: link
+                event_id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|WrongOrder
+                text: {{ my_whole_order_is_wrong }}
+                destination: wrong_order_never_arrived.1
+              - id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|QualityIssue
+                type: link
+                event_id: myOrdersList|Delivered|NonFoodVertical|BeforeTimeLine|QualityIssue
+                text: {{ qualiy_issue }}
+                destination: page.3
           - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine
             type: blockGroup
             meta:
-              conditions:
-                order.vertical_type NOT IN [restaurants] AND
-                order.delivered_time >= 20160
+              conditions: order.vertical_type NOT IN [restaurants] AND order.delivered_time >= 20160
             blocks:
-            - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems
-              event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems
-              text: {{ Items_are_missing_incorrect }}
-              type: accordion
-              blocks:
-                - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems|Accordion
-                  deflection_id: 1C
-                  type: blockGroup
-                  blocks:
-                    - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems|Accordion|text
-                      type: richContent
-                      text: {{ refund_not_possible_leave_content }}
-            - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder
-              event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder
-              text: {{ my_whole_order_is_wrong }}
-              type: accordion
-              blocks:
-                - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder|Accordion
-                  deflection_id: 1C
-                  type: blockGroup
-                  blocks:
-                    - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder|Accordion|text
-                      type: richContent
-                      text: {{ refund_not_possible_leave_content }}
-            - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue
-              event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue
-              text: {{ qualiy_issue }}
-              type: accordion
-              blocks:
-                - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue|Accordion
-                  deflection_id: 1C
-                  type: blockGroup
-                  blocks:
-                    - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue|Accordion|text
-                      type: richContent
-                      text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems
+                event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems
+                text: {{ Items_are_missing_incorrect }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|MissingIncorrectItems|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder
+                event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder
+                text: {{ my_whole_order_is_wrong }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|WrongOrder|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
+              - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue
+                event_id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue
+                text: {{ qualiy_issue }}
+                type: accordion
+                blocks:
+                  - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue|Accordion
+                    deflection_id: 1C
+                    type: blockGroup
+                    blocks:
+                      - id: myOrdersList|Delivered|NonFoodVertical|AfterTimeLine|QualityIssue|Accordion|text
+                        type: richContent
+                        text: {{ refund_not_possible_leave_content }}
           - id: myOrdersList|Delivered|RiderIssue
             type: link
             event_id: myOrdersList|Delivered|RiderIssue
@@ -600,7 +563,7 @@ pages:
       - id: myOrdersList|ACCEPTED|IssueWithRestaurant|contentBlock
         type: blockGroup
         event_id: myOrdersList|ACCEPTED|IssueWithRestaurant
-        deflection_id: 2E.1
+        deflection_id: 1A.1
         blocks:
           - id: myOrdersList|ACCEPTED|IssueWithRestaurant|content
             type: richContent
@@ -610,7 +573,7 @@ pages:
             submit_text: {{ Chat }}
             action: chat
             constants:
-              reason_code: 2E.1
+              reason_code: 1A.1
   - id: check_order_status.202
     title: {{ tgo_issue_with_rider_link }}
     blocks:
@@ -651,9 +614,7 @@ pages:
         event_id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes
         deflection_id: 1A.1
         meta:
-          conditions:
-            order.creation_time < 5 AND
-            order.delivery_type = platform_delivery
+          conditions: order.creation_time < 5 AND order.delivery_type = platform_delivery
         blocks:
           - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes|content
             type: richContent
@@ -663,9 +624,7 @@ pages:
         event_id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes
         deflection_id: 1A.1
         meta:
-          conditions:
-            order.creation_time >= 5 AND
-            order.delivery_type = platform_delivery
+          conditions: order.creation_time >= 5 AND order.delivery_type = platform_delivery
         blocks:
           - id: myOrdersList|OD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes|content
             type: richContent
@@ -681,9 +640,7 @@ pages:
         event_id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes
         deflection_id: 1A.1
         meta:
-          conditions:
-            order.creation_time < 5 AND
-            order.delivery_type = vendor_delivery
+          conditions: order.creation_time < 5 AND order.delivery_type = vendor_delivery
         blocks:
           - id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|lessThanFiveMinutes|content
             type: richContent
@@ -699,9 +656,7 @@ pages:
         event_id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes
         deflection_id: 1A.1
         meta:
-          conditions:
-            order.creation_time >= 5 AND
-            order.delivery_type = vendor_delivery
+          conditions: order.creation_time >= 5 AND order.delivery_type = vendor_delivery
         blocks:
           - id: myOrdersList|VD|TRANSMITTED|whereIsMyOrder|moreThanFiveMinutes|content
             type: richContent
@@ -815,10 +770,8 @@ pages:
               - id: autoCancellationDecision
                 type: decision
                 branches:
-                  - conditions: $autoCancellationSubmission.steps.autoCancellationRequest.response.status = 200 AND
-                      $autoCancellationSubmission.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                  - conditions: $autoCancellationSubmission.steps.autoCancellationRequest.response.status = 200 AND $autoCancellationSubmission.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
                     next_step_id: navigateToOrderCancelledPage
-                  
                   - next_step_id: navigateToChatPage
               - id: navigateToOrderCancelledPage
                 type: navigation
@@ -850,9 +803,7 @@ pages:
           - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|ReactiveCompNotRecommendedContent
             type: richContent
             meta:
-              conditions: $reactiveCompEvaluate.response.body.type != reactive_compensation_recommendation AND
-                          $reactiveCompEvaluate.response.body.type != voucher_already_created
-              
+              conditions: $reactiveCompEvaluate.response.body.type != reactive_compensation_recommendation AND $reactiveCompEvaluate.response.body.type != voucher_already_created
             text: {{ cancel_my_order_when_status_is_pickedup_and_delayed }}
           - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|VoucherAlreadyClaimed
             type: blockGroup
@@ -924,10 +875,8 @@ pages:
               - id: autoCancellationDecision
                 type: decision
                 branches:
-                  - conditions: $autoCancellationSubmission.steps.autoCancellationRequest.response.status = 200 AND
-                      $autoCancellationSubmission.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                  - conditions: $autoCancellationSubmission.steps.autoCancellationRequest.response.status = 200 AND $autoCancellationSubmission.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
                     next_step_id: navigateToOrderCancelledPage
-                  
                   - next_step_id: navigateToChatPage
               - id: navigateToOrderCancelledPage
                 type: navigation
@@ -946,8 +895,7 @@ pages:
           - id: myOrdersList|PICKEDUP|cancelMyOrder|Delayed|WaitingTimeIsTooLong|CompNotRecommended|ChatButton
             type: form
             meta:
-              conditions: $reactiveCompEvaluate.response.body.type != reactive_compensation_recommendation AND
-                          $reactiveCompEvaluate.response.body.type != voucher_already_created
+              conditions: $reactiveCompEvaluate.response.body.type != reactive_compensation_recommendation AND $reactiveCompEvaluate.response.body.type != voucher_already_created
             submit_text: {{ Chat }}
             action: chat
             constants:
@@ -1076,20 +1024,20 @@ pages:
             action: chat
             constants:
               reason_code: 1A.9
-  - id: complain_about_late_order.100
+  - id: check_order_status.505
     title: {{ where_is_my_order }}
-    blocks: 
+    blocks:
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|orderStatus
         type: link
         text: {{ order_status_link }}
-        destination: complain_about_late_order.1
+        destination: check_order_status.123
       - id: myOrdersList|ACCEPTED|IssueWithRestaurant
         type: link
         meta:
           conditions: order.creation_time > 10
         text: {{ tgo_issue_with_rest_link }}
         destination: check_order_status.201
-  - id: complain_about_late_order.1
+  - id: check_order_status.123
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|notExceedPromiseTime
@@ -1097,9 +1045,7 @@ pages:
         event_id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|notExceedPromiseTime
         deflection_id: 1A.1
         meta:
-          conditions:
-            order.original_promised_time < 0 AND
-            order.delivery_type = platform_delivery
+          conditions: order.original_promised_time < 0 AND order.delivery_type = platform_delivery
         blocks:
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|notExceedPromiseTime|content
             type: richContent
@@ -1109,19 +1055,43 @@ pages:
         event_id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime
         deflection_id: 1A.2
         meta:
-          conditions:
-            order.original_promised_time >= 0 AND
-            order.delivery_type = platform_delivery
+          conditions: order.original_promised_time >= 0 AND order.delivery_type = platform_delivery
         blocks:
           - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|content
             type: richContent
             text: {{ whereIsMyOrder_OD_ACCEPTED_exceededPromiseTime_Content }}
-          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|chat
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|shortdelay|chat
+            meta:
+              conditions: order.original_promised_time BETWEEN 0:10
             type: form
             submit_text: {{ Chat }}
             action: chat
             constants:
-              reason_code: 1A.2
+              reason_code: 1A.12
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|moderatedelay|chat
+            meta:
+              conditions: order.original_promised_time BETWEEN 10:20
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.13
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|severdelay|chat
+            meta:
+              conditions: order.original_promised_time BETWEEN 20:30
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.14
+          - id: myOrdersList|OD|ACCEPTED|whereIsMyOrder|exceededPromiseTime|extremedelay|chat
+            meta:
+              conditions: order.original_promised_time > 30
+            type: form
+            submit_text: {{ Chat }}
+            action: chat
+            constants:
+              reason_code: 1A.15
       - id: myOrdersList|VD|ACCEPTED|whereIsMyOrder
         type: blockGroup
         event_id: myOrdersList|VD|ACCEPTED|whereIsMyOrder
@@ -1149,38 +1119,38 @@ pages:
         meta:
           conditions: order.original_promised_time <= 0
         text: {{ order_status_link }}
-        destination: complain_about_late_order.240
+        destination: check_order_status.240
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 0 AND order.original_promised_time <= 10
         text: {{ order_status_link }}
-        destination: complain_about_late_order.245
+        destination: complaint_about_short_delay.245
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|1620|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 10 AND order.original_promised_time <= 20
         text: {{ order_status_link }}
-        destination: complain_about_late_order.246
+        destination: complaint_about_moderate_delay.246
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|2130|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 20 AND order.original_promised_time <= 30
         text: {{ order_status_link }}
-        destination: complain_about_late_order.247
+        destination: complaint_about_severe_delay.247
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|30100|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 30
         text: {{ order_status_link }}
-        destination: complain_about_late_order.248
+        destination: complaint_about_extreme_delay.248
       - id: myOrdersList|PICKEDUP|IssueWithRideroRRestaurant
         type: link
         meta:
           conditions: order.delivery_type = vendor_delivery
         text: {{ tgo_issue_with_rider_link }}
         destination: check_order_status.202
-  - id: complain_about_late_order.240
+  - id: check_order_status.240
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime
@@ -1191,7 +1161,7 @@ pages:
           - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime|content
             type: richContent
             text: {{ whereIsMyOrder_OD_PICKEDUP_notExceedPromiseTime_Content }}
-  - id: complain_about_late_order.245
+  - id: complaint_about_short_delay.245
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|onlyDelay|content
@@ -1203,7 +1173,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.12
-  - id: complain_about_late_order.246
+  - id: complaint_about_moderate_delay.246
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
@@ -1278,7 +1248,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.13
-  - id: complain_about_late_order.247
+  - id: complaint_about_severe_delay.247
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
@@ -1353,7 +1323,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.14
-  - id: complain_about_late_order.248
+  - id: complaint_about_extreme_delay.248
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
@@ -1421,13 +1391,13 @@ pages:
         action: chat
         constants:
           reason_code: 1A.15
-  - id: order_never_arrived.1
+  - id: order_marked_as_delivered_but_didnt_receive.1
     title: {{ my_order_never_arrived }}
     blocks:
       - id: myOrdersList|OD|Delivered|myOrderNeverArrived|blockGroup
         type: blockGroup
         event_id: myOrdersList|OD|Delivered|myOrderNeverArrived
-        deflection_id: 2B.2
+        deflection_id: 1A.1
         blocks:
           - id: myOrdersList|OD|Delivered|myOrderNeverArrived|content
             type: richContent
@@ -1437,7 +1407,7 @@ pages:
             submit_text: {{ Chat }}
             action: chat
             constants:
-              reason_code: 2B.2
+              reason_code: 1A.1
   - id: order_never_arrived.2
     title: {{ my_order_never_arrived }}
     blocks:
@@ -2595,8 +2565,7 @@ pages:
         blocks:
           - id: tproSubscription|HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro|content
             type: richContent
-            text: {{ tproSubscription_HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro_content
-              }}
+            text: {{ tproSubscription_HowDoIIdentifyWhichRestaurantsArePartOfTalabatPro_content }}
   - id: subscription_premium_service_issue.4
     title: {{ What_conditions_should_I_meet_to_benefit_from_talabat_Pro }}
     blocks:
@@ -2607,8 +2576,7 @@ pages:
         blocks:
           - id: tproSubscription|WhatConditionsShouldIMeetToBenefitFromTalabatPro|content
             type: richContent
-            text: {{ tproSubscription_WhatConditionsShouldIMeetToBenefitFromTalabatPro_content
-              }}
+            text: {{ tproSubscription_WhatConditionsShouldIMeetToBenefitFromTalabatPro_content }}
   - id: subscription_premium_service_issue.5
     title: {{ How_do_I_renew_my_talabat_Pro_membership }}
     blocks:
@@ -2686,9 +2654,8 @@ pages:
         result_type: SUCCESS
         title: {{ voucher_issue_success }}
         description: {{ voucher_issue_content }}
-# ========= FORMV2 BLOCK WITH REQUEST-->DECISION-->NAVIGATION ON SUBMIT ==========
   - id: cancellation.autoCancellation
-    title: {{ request_cancel_order }} 
+    title: {{ request_cancel_order }}
     blocks:
       - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
         type: blockGroup
@@ -2697,7 +2664,7 @@ pages:
         blocks:
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|text
             type: richContent
-            text:  {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }}
+            text: {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }}
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|formv2
             type: formV2
             namespace: autoCancellationNamespace
@@ -2732,24 +2699,18 @@ pages:
                     order_id: << order.orderId >>
                     platform_code: << $autoCancellationNamespace.fieldValues.autoCancellationReasonCode >>
                 next_step_id: autoCancellationDecision
-      
               - id: autoCancellationDecision
                 type: decision
                 branches:
-                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.status = 200 AND
-                      $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.status = 200 AND $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
                     next_step_id: navigateToOrderCancelledPage
- #default - else if none of the above conditions are met
                   - next_step_id: navigateToNoFallbackPage
               - id: navigateToOrderCancelledPage
                 type: navigation
                 destination: cancellation.navigateToOrderCancelledPagePreVa
- 
               - id: navigateToNoFallbackPage
                 type: navigation
-                destination: cancellation.navigateToNoFallbackPage 
-
-# ========= RESULT PAGES =========
+                destination: cancellation.navigateToNoFallbackPage
   - id: cancellation.navigateToOrderCancelledPagePreVa
     title: {{request_cancel_order}}
     blocks:
@@ -2757,9 +2718,8 @@ pages:
         type: result
         deflection_id: 1C
         result_type: SUCCESS
-        title: {{order_canceled_success}} 
+        title: {{order_canceled_success}}
         description: {{order_canceled_content}}
-  
   - id: cancellation.navigateToNoFallbackPage
     title: {{request_cancel_order}}
     blocks:

@@ -301,14 +301,12 @@ pages:
             meta:
               conditions: order.courier.accepted_time > 0 AND order.delivery_type = platform_delivery
             destination: change_delivery_instructions.1
-      # ========= AUTO CANCELLATION PRE VENDOR ACCEPTANCE ==================================================================================================
-      # "Link" block that leads to "formV2-autoCancellation" block      
       - id: orders|ordersList|orderDetail|OD|cancelMyOrder
         type: blockGroup
         event_id: orders|ordersList|orderDetail|OD|cancelMyOrder
         blocks:
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
-            text: {{ request_cancel_order }} #cancel_my_order - { { fill out with the correct text or add Weblate translation key of your choice } }
+            text: {{ request_cancel_order }}
             type: link
             meta:
               conditions: order.status IN [PENDING, TRANSMITTED, SENT_TO_TRANSMISSION, REACHING_TRANSMISSION_FAILED, SENT_TO_LOGISTICS, SENDING_TO_VENDOR, DISPLAYED_AT_VENDOR] AND order.delivery_type = platform_delivery
@@ -395,7 +393,7 @@ pages:
             text: {{ my_order_never_arrived }}
             meta:
               conditions: order.delivery_type = platform_delivery AND order.delivered_time <= 240
-            destination: order_never_arrived.1
+            destination: order_marked_as_delivered_but_didnt_receive.1
           - id: myOrdersList|VD|Delivered|myOrderNeverArrived
             type: link
             text: {{ my_order_never_arrived }}
@@ -438,7 +436,7 @@ pages:
       - id: myOrdersList|ACCEPTED|IssueWithRestaurant|contentBlock
         type: blockGroup
         event_id: myOrdersList|ACCEPTED|IssueWithRestaurant
-        deflection_id: 2E.1
+        deflection_id: 1A.1
         blocks:
           - id: myOrdersList|ACCEPTED|IssueWithRestaurant|content
             type: richContent
@@ -448,7 +446,7 @@ pages:
             submit_text: {{ Chat }}
             action: chat
             constants:
-              reason_code: 2E.1
+              reason_code: 1A.1
   - id: check_order_status.202
     title: {{ tgo_issue_with_rider_link }}
     blocks:
@@ -1203,13 +1201,13 @@ pages:
         action: chat
         constants:
           reason_code: 1A.15
-  - id: order_never_arrived.1
+  - id: order_marked_as_delivered_but_didnt_receive.1
     title: {{ my_order_never_arrived }}
     blocks:
       - id: myOrdersList|OD|Delivered|myOrderNeverArrived|blockGroup
         type: blockGroup
         event_id: myOrdersList|OD|Delivered|myOrderNeverArrived
-        deflection_id: 2B.2
+        deflection_id: 1A.4
         blocks:
           - id: myOrdersList|OD|Delivered|myOrderNeverArrived|content
             type: richContent
@@ -1219,7 +1217,7 @@ pages:
             submit_text: {{ Chat }}
             action: chat
             constants:
-              reason_code: 2B.2
+              reason_code: 1A.4
   - id: order_never_arrived.2
     title: {{ my_order_never_arrived }}
     blocks:
@@ -2373,9 +2371,8 @@ pages:
         result_type: SUCCESS
         title: {{ voucher_issue_success }}
         description: {{ voucher_issue_content }}
-# ========= FORMV2 BLOCK WITH REQUEST-->DECISION-->NAVIGATION ON SUBMIT AUTCOCANCEL PRE VA==========
   - id: cancellation.autoCancellation
-    title: {{ request_cancel_order }} 
+    title: {{ request_cancel_order }}
     blocks:
       - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted
         type: blockGroup
@@ -2384,7 +2381,7 @@ pages:
         blocks:
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|text
             type: richContent
-            text:  {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }}
+            text: {{ myOrdersList_TRANSMITTED_cancelMyOrder_content }}
           - id: orders|ordersList|orderDetail|OD|cancelMyOrder|notAccepted|formv2
             type: formV2
             namespace: autoCancellationNamespace
@@ -2419,24 +2416,18 @@ pages:
                     order_id: << order.orderId >>
                     platform_code: << $autoCancellationNamespace.fieldValues.autoCancellationReasonCode >>
                 next_step_id: autoCancellationDecision
-      
               - id: autoCancellationDecision
                 type: decision
                 branches:
-                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.status = 200 AND
-                      $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
+                  - conditions: $autoCancellationNamespace.steps.autoCancellationRequest.response.status = 200 AND $autoCancellationNamespace.steps.autoCancellationRequest.response.body.type = ORDER_CANCELLED
                     next_step_id: navigateToOrderCancelledPage
- #default - else if none of the above conditions are met
                   - next_step_id: navigateToNoFallbackPage
               - id: navigateToOrderCancelledPage
                 type: navigation
                 destination: cancellation.navigateToOrderCancelledPagePreVa
- 
               - id: navigateToNoFallbackPage
                 type: navigation
-                destination: cancellation.navigateToNoFallbackPage 
-
-# ========= RESULT PAGES =========
+                destination: cancellation.navigateToNoFallbackPage
   - id: cancellation.navigateToOrderCancelledPagePreVa
     title: {{request_cancel_order}}
     blocks:
@@ -2444,9 +2435,8 @@ pages:
         type: result
         deflection_id: 1C
         result_type: SUCCESS
-        title: {{order_canceled_success}} 
+        title: {{order_canceled_success}}
         description: {{order_canceled_content}}
-  
   - id: cancellation.navigateToNoFallbackPage
     title: {{request_cancel_order}}
     blocks:

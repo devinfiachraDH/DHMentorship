@@ -929,38 +929,38 @@ pages:
         meta:
           conditions: order.original_promised_time <= 0
         text: {{ order_status_link }}
-        destination: complain_about_late_order.240
+        destination: check_order_status.240
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 0 AND order.original_promised_time <= 10
         text: {{ order_status_link }}
-        destination: complain_about_late_order.245
+        destination: complaint_about_short_delay.245
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|1620|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 10 AND order.original_promised_time <= 20
         text: {{ order_status_link }}
-        destination: complain_about_late_order.246
+        destination: complaint_about_moderate_delay.246
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|2130|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 20 AND order.original_promised_time <= 30
         text: {{ order_status_link }}
-        destination: complain_about_late_order.247
+        destination: complaint_about_severe_delay.247
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|afterDelay|30100|orderStatus
         type: link
         meta:
           conditions: order.original_promised_time > 30
         text: {{ order_status_link }}
-        destination: complain_about_late_order.248
+        destination: complaint_about_extreme_delay.248
       - id: myOrdersList|PICKEDUP|IssueWithRideroRRestaurant
         type: link
         meta:
           conditions: order.delivery_type = vendor_delivery
         text: {{ tgo_issue_with_rider_link }}
         destination: check_order_status.202
-  - id: complain_about_late_order.240
+  - id: check_order_status.240
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime
@@ -971,7 +971,7 @@ pages:
           - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|notExceedPromiseTime|content
             type: richContent
             text: {{ whereIsMyOrder_OD_PICKEDUP_notExceedPromiseTime_Content }}
-  - id: complain_about_late_order.245
+  - id: complaint_about_short_delay.245
     title: {{ order_status_link }}
     blocks:
       - id: myOrdersList|OD|PICKEDUP|whereIsMyOrder|exceededPromiseTime|onlyDelay|content
@@ -983,7 +983,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.12
-  - id: complain_about_late_order.246
+  - id: complaint_about_moderate_delay.246
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
@@ -1058,7 +1058,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.13
-  - id: complain_about_late_order.247
+  - id: complaint_about_severe_delay.247
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
@@ -1133,7 +1133,7 @@ pages:
         action: chat
         constants:
           reason_code: 1A.14
-  - id: complain_about_late_order.248
+  - id: complaint_about_extreme_delay.248
     title: {{ reason_for_cancelling_waiting_time_is_too_long }}
     meta:
       before_display:
